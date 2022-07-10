@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PhalanxHead - Projects - This Website!</title>
+    <!--
+    <author>Lydia Luka Hedt</author>
+    <date>2022-02-26</date>
+    -->
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../scripts_borrowed/highlight/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="../style/code-line-nos.css">
+    <meta name="color-scheme" content="dark light">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li style="float:right"><button class="btn-toggle-theme"></button></li>
+        </ul>
+    </nav>
+    <main>
+        <div>
+            <h1>This Website!</h1>
+            <p>This website is a small personal project I took on to see what we get for free using extremely minimal HTML.</p>
+        </div>
+        <div>
+            <p>It is using the following raw technologies:</p>
+            <ul>
+                <li>HTML 5</li>
+                <li>CSS 3</li>
+                <li>Raw JavaScript (With whatever browser compatibility is available in 2022 browsers)</li>
+                <li>Apache HTTPD Server</li>
+            </ul>
+            <p>I was intending to use only JavaScript I could write myself, but I have also imported the below scripts to get some helpful visual aids that I couldn't achieve with just CSS:</p>
+            <ul>
+                <li><a href="https://highlightjs.org/">highlight.js</a></li>
+                <li><a href="https://github.com/wcoder/highlightjs-line-numbers.js/">Highligh-JS Line Numbers</a></li>
+            </ul>
+            <p>In essence, this website is devoid of almost any modern frameworks, polyfills, or even a build system.</p>
+            <p>This makes the size excessively minimal, even if maybe it isn't nearly as fancy as a full web app.</p>
+        </div>
+        <div>
+            <p>The highlightJs scripts allow me to embed code segments like this:</p>
+            <pre><code class="language-rust">
+fn main() {
+    println!("Hello World!");
+    if(true) {
+        println!("This is Me!");
+    }
+}
+        </code></pre>
+        </div>
+
+</body>
+<script src="../scripts/toggle-dark.js"></script>
+<script src="../scripts_borrowed/highlight/highlight.min.js"></script>
+<script src="../scripts_borrowed/highlightjs-line-numbers_2_8_0.min.js"></script>
+<script>
+    hljs.highlightAll();
+    hljs.initLineNumbersOnLoad();
+</script>
+
+</html>

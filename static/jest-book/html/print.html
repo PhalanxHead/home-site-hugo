@@ -1,0 +1,1241 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Jest Book</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="./mdbook-admonish.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Custom JS scripts for mdbook-pdf PDF generation -->
+        <script type='text/javascript'>
+            let markAllContentHasLoadedForPrinting = () =>
+                window.setTimeout(
+                    () => {{
+                        let p = document.createElement('div');
+                        p.setAttribute('id', 'content-has-all-loaded-for-mdbook-pdf-generation');
+                        document.body.appendChild(p);
+                    }}, 100
+                );
+
+            window.addEventListener('load', () => {{
+                // Expand all the <details> elements for printing.
+                r = document.getElementsByTagName('details');
+                for (let i of r)
+                    i.open = true;
+
+                try {{
+                    MathJax.Hub.Register.StartupHook('End', markAllContentHasLoadedForPrinting);
+                }} catch (e) {{
+                    markAllContentHasLoadedForPrinting();
+                }}
+            }});
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="testing_introduction.html">Introduction to Testing</a></li><li class="chapter-item expanded affix "><li class="part-title">Jest</li><li class="chapter-item expanded "><a href="jest/basic_structure.html"><strong aria-hidden="true">1.</strong> Basic Jest Testing Structure</a></li><li class="chapter-item expanded "><a href="jest/matchers.html"><strong aria-hidden="true">2.</strong> Jest Matchers</a></li><li class="chapter-item expanded "><a href="jest/repeated_tests.html"><strong aria-hidden="true">3.</strong> Repeated Tests with it.each()</a></li><li class="chapter-item expanded affix "><li class="part-title">Jest Mocks</li><li class="chapter-item expanded "><a href="jest/mock_stub_spy.html"><strong aria-hidden="true">4.</strong> Mocking vs Stubbing vs Spying - A Comparison</a></li><li class="chapter-item expanded "><a href="jest/basic_mock_example.html"><strong aria-hidden="true">5.</strong> A Basic Mock Example</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="jest/mocking_singleton.html"><strong aria-hidden="true">5.1.</strong> Mocking Singletons</a></li></ol></li><li class="chapter-item expanded "><a href="jest/spying_analysis.html"><strong aria-hidden="true">6.</strong> Spying in Jest - When and Why</a></li><li class="chapter-item expanded affix "><li class="part-title">Nock + Jest</li><li class="chapter-item expanded "><a href="nock/mocking_restapis.html"><strong aria-hidden="true">7.</strong> Mocking RestAPIs with Nock and Jest</a></li><li class="chapter-item expanded affix "><li class="part-title">AWS SDK v2</li><li class="chapter-item expanded "><a href="aws-sdk/service-mock-sdk.html"><strong aria-hidden="true">8.</strong> Mocking Services with aws-sdk-mock</a></li><li class="chapter-item expanded "><a href="aws-sdk/aws_errors.html"><strong aria-hidden="true">9.</strong> Mocking AWS Error Responses</a></li><li class="chapter-item expanded "><a href="aws-sdk/aws_responses.html"><strong aria-hidden="true">10.</strong> Mocking AWS PromiseResult</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Appendix</li><li class="chapter-item expanded "><a href="jest/vscode_setup.html"><strong aria-hidden="true">11.</strong> Setup Jest in VsCode</a></li><li class="chapter-item expanded "><a href="jest/handy_hacks.html"><strong aria-hidden="true">12.</strong> Boolean Logic in expect() clauses</a></li><li class="chapter-item expanded "><a href="jest/samples.html"><strong aria-hidden="true">13.</strong> Expressiveness Example</a></li><li class="spacer"></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Jest Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <h1 id="unit-testing-in-typescriptnodejs"><a class="header" href="#unit-testing-in-typescriptnodejs">Unit Testing in Typescript/NodeJS</a></h1>
+<p>Unit testing is a vital part of writing stable backend software. It's even more important in a dynamic language environment like NodeJS, as it doesn't have a strict type system to catch a lot of seemingly simple errors.</p>
+<p>A number of different testing frameworks exist, and each have their own quirks.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="basic-structure-of-jest-tests"><a class="header" href="#basic-structure-of-jest-tests">Basic Structure of Jest Tests</a></h1>
+<p>Jest is a test and mocking framework built in and for NodeJS. Typescript compatibility has been built over the top of it, but a lot of the legacy documentation has been written for older Js in mind first.</p>
+<p>The basic intent, as with all unit testing, is to take some public element of your codebase (a unit if you will), and ensure that it works the way you expect under all input conditions. This can help us detect the cause of bugs early while building, and when a change has created a problem later on.</p>
+<p>Jest has a series of different key functions we can use to organise and run our tests. Here's the main few:</p>
+<pre><code class="language-typescript">describe('group description', () =&gt; {});
+// Describe is used to group logically similar test cases. You can nest these as many times as needed. Expect() statements do not go into describe() blocks directly.
+
+it('test description', () =&gt; {});
+test('test description', () =&gt; {});
+// It and Test are aliases of the same thing. No preference for either, apart from how you phrase your test descriptions. 
+// it('Returns a positive result when adding 2 positive numbers', () =&gt; {})
+// is preferred over
+// test('If it returns a positibe result when adding 2 positive numbers', () =&gt; {});
+// As it's more obvious what the test is expecting when it fails.
+
+expect();
+// expect is the assertion clause that Jest uses. It has 2 basic forms:
+// 1: Matching a result with an expectation:
+expect(myFunction('Hello', 'World!')).toBe('Hello World!');
+// 2: Checking for an error
+expect(() =&gt; { myFunction('Hellow', 'World') }).not.toThowError();
+</code></pre>
+<p>When put together, normal, synchronous testing might have a structure like this:</p>
+<pre><code class="language-typescript">describe('testModule/Class', () =&gt; {
+  describe('public function being tested', () =&gt; {
+    it('specific behaviour being tested 1 - Eg &quot;Adding 2 positive integers gives the positive sum&quot;', () =&gt; {
+      expect(add(2,2)).toBe(4);
+    });
+
+    it('specific behaviour being tested 2 - Eg &quot;Adding a positive and negative integer gives the signed difference between their absolute values&quot;', () =&gt; {
+      expect(add(2,-2)).toBe(0);
+    });
+
+    it('specific behaviour being tested 3 - Eg &quot;Adding two negaive integers gives the negative sum&quot;', () =&gt; {
+      expect(add(-2, -2)).toBe(-4);
+    });
+  });
+});
+</code></pre>
+<p>Generally speaking, less assertions per-test (ie, per <code>it()</code> statement) will give more reliable results. Jest has been known to ignore failing <code>expect()</code> statements if several (&gt;5 maybe?) are stacked.</p>
+<p>Writing good unit tests with descriptive labels also has the advantage of acting as documentation for a specific service. Comments and requirements docs may fail to be updated at some point, but tests must pass to be deployed, so it is helpful to write more, smaller tests.</p>
+<p>A more explicit form of Arrange/Act/Assert might look like so:</p>
+<pre><code class="language-typescript">describe('testModule/Class', () =&gt; {
+  describe('public function being tested', () =&gt; {
+    it('specific behaviour being tested 1 - Eg &quot;Adding 2 positive integers gives the positive sum&quot;', () =&gt; {
+      const inputDataA = 2;
+      const inputDataB = 2;
+      const expectedOutputData = 4;
+
+      const actualResult = add(inputDataA, inputDataB);
+
+      expect(actualResult).toBe(expectedOutputData);
+
+    });
+  });
+});
+</code></pre>
+<p>Obviously this is a fairly contrived example, but your data may be a lot more complex - ie data produced by faker or a very long string.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jest-matchers"><a class="header" href="#jest-matchers">Jest Matchers</a></h1>
+<h2 id="basic-matchers"><a class="header" href="#basic-matchers">Basic Matchers</a></h2>
+<p>Jest has a fairly extensive list of basic matchers, found here: <a href="https://jestjs.io/docs/expect">Expect · Jest (jestjs.io)</a></p>
+<p>A few main tripping points that you'll probably forget:</p>
+<pre><code class="language-typescript">expect().toBe() // Checks if 2 objects are the same *instance*
+expect().toEqual() // Checks if 2 objects have equal properties (preferable I think)
+
+expect().toBeCloseTo() // use this for floating-point equality testing.
+</code></pre>
+<h2 id="more-advanced-matchers"><a class="header" href="#more-advanced-matchers">More advanced matchers</a></h2>
+<p>In some cases, we may want to use more advanced matching techniques when asserting certain responses.</p>
+<p>For example, it may be beneficial to ignore the exact timestamp generated by a service response, but to simply assert that there is one.</p>
+<p>We can used more advanced matchers (detailed here: <a href="https://just-boris.medium.com/the-hidden-power-of-jest-matchers-f3d86d8101b0">The hidden power of Jest matchers | by Boris | Medium</a>) to test the interesting elements of the response.</p>
+<p>Examples:</p>
+<pre><code class="language-typescript">// Expecting a date, but without any care for the contents
+const comment = createComment('test content', 'author@me.com');
+expect(comment).toEqual({
+  createdAt: expect.any(Date),
+  content: 'test content',
+  author: 'author@me.com'
+});
+</code></pre>
+<pre><code class="language-typescript">// Partial match an object on specific keys
+const user = prepareUserInfo('test-user'); 
+// user object is something like ... 
+// {
+//   id: 123,
+//   name: 'test-user',
+//   profile: {...},
+//   passwordHash: '*****',
+//   whatever: {...}
+// }
+// ... but for the test we are interested only in name and id
+expect(user).toEqual(expect.objectContaining({
+  id: 123,
+  name: 'test-user'
+}));
+</code></pre>
+<pre><code class="language-typescript">// Checking a mocked service was called, formatting an input argument exactly.
+test('Sends an email with all the listed items present, separated by newlines', async () =&gt; {
+    const sendMail = jest.fn();
+    const testLines = [
+        `This is item 1`,
+        `This is another item`,
+        `Oh wow, yet another item!`,
+    ];
+    await manage.sendLinesEmail(testLines);
+
+    expect(sendMail).toHaveBeenCalledTimes(1);
+    expect(sendMail).toHaveBeenCalledWith({
+        from: expect.any(string),
+        to: expect.any(string),
+        subject: expect.stringContaining('Preconfigured subject line!'),
+        text: expect.stringContaining(`\n${testLines.join('\n')}`),
+    });
+});
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="repeated-tests-with-iteach"><a class="header" href="#repeated-tests-with-iteach">Repeated Tests with <code>it.each()</code></a></h1>
+<p>Sometimes you will have a set of tests that all look very oddly similar, but use ever so slightly different data and results. Not to worry, we can write the test code once and insert our own data layout using the <code>it.each()</code> function. This will also let us use the values in the test name.</p>
+<p>Let's say we are testing the following function, since it's fairly simple.</p>
+<pre><code class="language-typescript">// src/palindrome.ts
+function isPalindrome(word: string): boolean {
+	return word.toLowerCase() === word.toLowerCase().split('').reverse().join('');
+}
+</code></pre>
+<h2 id="form-0-individual-tests"><a class="header" href="#form-0-individual-tests">Form 0: Individual Tests</a></h2>
+<p>The default way to write a test suite is to use individual <code>it()</code> statements for each test.</p>
+<pre><code class="language-typescript">// test/palindrome.test.ts
+describe('isPalindrome - Form 0', () =&gt; {
+	it('isPalindrome(&quot;Racecar&quot;) =&gt; true', () =&gt; {
+		expect(isPalindrome('Racecar')).toEqual(true);
+	});
+	it('isPalindrome(&quot;Typewriter&quot;) =&gt; false', () =&gt; {
+		expect(isPalindrome('Typewriter')).toEqual(false);
+	});
+	it('isPalindrome(&quot;rotor&quot;) =&gt;', () =&gt; {
+		expect(isPalindrome('rotor')).toEqual(true);
+	});
+});
+</code></pre>
+<p>This certainly works, but it violates the <code>DRY</code> principle - Don't Repeat Yourself. We can do better!</p>
+<h2 id="form-1-input-data-as-an-array-of-arrays"><a class="header" href="#form-1-input-data-as-an-array-of-arrays">Form 1: Input data as an array of Arrays</a></h2>
+<p>You can specify a test data suite as an &quot;Array of Arrays&quot; if you like, where each inner array is equal to one test data set. Example:</p>
+<pre><code class="language-typescript">// test/palindrome.test.ts
+describe('isPalindrome - Form 1', () =&gt; {
+	it.each([
+		['Racecar', true],
+		['TypeWriter', false],
+		['rotor', true],
+	])('isPalindrome(&quot;%s&quot;) =&gt; %s', (testWord, expectedResult) =&gt; {
+		expect(isPalindrome(testWord)).toEqual(expectedResult);
+	});
+});
+</code></pre>
+<p>This gives us a few nice qualities, and has some downsides.</p>
+<p>Firstly, we write the test code once, and yet it runs multiple times!</p>
+<p>We also can inject the parameter values from the test into the test name (using <code>%s</code> formatting)!</p>
+<p>It also means that adding more test cases is as easy as adding a new line to the array.</p>
+<p>Unfortunately, it has the downside of not really labelling the parameters. If you're not so familiar with JS, it might not be obvious that <code>'Racecar'</code> is being inserted as <code>testWord</code>, but that's not a huge deal.</p>
+<p>We do have another option:</p>
+<h2 id="form-2-input-data-as-tagged-template-literals"><a class="header" href="#form-2-input-data-as-tagged-template-literals">Form 2: Input Data as Tagged Template Literals</a></h2>
+<p>Tagged Template literals is a concept in JS of using the backtick characters (<code>`</code>) to format strings.</p>
+<p>In this case we get to create a testing table as below:</p>
+<pre><code class="language-typescript">// test/palindrome.test.ts
+describe('isPalindrome - Form 2', () =&gt; {
+	it.each`
+		testWord        | expectedResult
+		${'Racecar'}    | ${true}
+		${'TypeWriter'} | ${false}
+		${'rotor'}      | ${true}
+	`('isPalindrome(&quot;$testWord&quot;) =&gt; $expectedResult', ({ testWord, expectedResult }) =&gt; {
+		expect(isPalindrome(testWord)).toEqual(expectedResult);
+	});
+});
+</code></pre>
+<p>Note the differences between this and <code>Form 1</code></p>
+<ul>
+<li><code>it.each([])('', ()={})</code> is now called like <code>it.each``('', () =&gt; {})</code></li>
+<li>The parameters in the test name are now labelled, instead of using <code>%s</code></li>
+<li>The arguments to the test are now using <code>({ testWord, expectedResult }) =&gt; {}</code> instead of <code>(testWord, expectedResult) =&gt; {}</code></li>
+<li>The columns have labels!</li>
+<li>Test values are wrapped in <code>${}</code> . This is required, even for string arguments.</li>
+</ul>
+<p>If you're using ES Lint and Prettier, it will even clean up the table formatting for you, so all of your columns are well aligned!</p>
+<p>The final advantage is that the column order doesn't have to follow the argument order in the test parameters - the column names just have to match. ie: the following will also work!</p>
+<pre><code class="language-typescript">describe('isPalindrome - Form 2', () =&gt; {
+	it.each`
+		expectedResult | testWord
+		${true}        | ${'Racecar'}
+		${false}       | ${'TypeWriter'}
+		${true}        | ${'rotor'}
+	`('isPalindrome(&quot;$testWord&quot;) =&gt; $expectedResult', ({ testWord, expectedResult }) =&gt; {
+		expect(isPalindrome(testWord)).toEqual(expectedResult);
+	});
+});
+</code></pre>
+<p>In any case, the results will give you tests that print out like this when you run them:</p>
+<p><img src="jest/./assets/images/it_each_results.png" alt="" /></p>
+<p>Using <code>it.each()</code> may not be applicable for all test input data, for example if sometimes the test should throw an <code>Error</code>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="testing-services-with-jest"><a class="header" href="#testing-services-with-jest">Testing Services with Jest</a></h1>
+<h2 id="mock-vs-stub-vs-spy"><a class="header" href="#mock-vs-stub-vs-spy">Mock vs Stub vs Spy</a></h2>
+<p>Most testing reference documents will discuss some combination of Mocking, Stubbing and Spying as a tool for testing services. However, terminology has become muddled as more and more digital ink has been spilled, and frameworks have been introduced.</p>
+<p>Let's briefly define the above terms.</p>
+<h3 id="mocking"><a class="header" href="#mocking">Mocking</a></h3>
+<p>Mocking is when you replace the implementation of a function, service, or other coroutine with a no-op operation, and return null or 0. Often you will use this to remove some external dependency like a HTTP call, or a send to a logging framework. It can also be used to replace some expensive call with a no-op.</p>
+<p>Technically speaking, mocks don't do any calculation or return any real implementation/data. They're the dumbest possible unit, and we use them to replace side-effects.</p>
+<h3 id="stubbing"><a class="header" href="#stubbing">Stubbing</a></h3>
+<p>Stubbing is like mocking, but your replacement function might have a tiny amount of brains to it, and might return actual, useful data. It simulates some behaviour.</p>
+<p>This article will use Mock and Stub interchangeably, as <code>jest</code> doesn't draw any real distinction between them (apart from mocks are not given implementations by default).</p>
+<h3 id="spying"><a class="header" href="#spying">Spying</a></h3>
+<p>Spying, unlike mocking or stubbing, doesn't replace the default implementation of a piece of code (at least, unless you tell it to). Generally you would use spying to check that a method is being called with the right parameters, and the correct number of times.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="a-mockstub-example"><a class="header" href="#a-mockstub-example">A Mock/Stub Example</a></h1>
+<p>Why would you want to mock or stub a function? In essence it comes down to the structure of your unit test.</p>
+<p>Typically, each test should be looking to verify one specific piece of behaviour, eg: <code>The SMS Service sends one SMS to each unique number in the recipient list</code> .</p>
+<p>This description implies 2 things:</p>
+<ul>
+<li>The service is responsible for de-duplicating the recipient list</li>
+<li>This service needs to call its SMS Provider once for each list item after de-duplication.</li>
+</ul>
+<p>Realistically, we don't care who the SMS provider is, or how they are told to send an SMS, those can be handled downstream or in integration testing.</p>
+<p>We probably don't want to be sending real SMSes out in this case though! So let's mock/stub the SMS Provider.</p>
+<p>We may or may not care, in this tests case, what the response from the SMS Provider call is. If we do, we would stub the function to return some reasonable response, and if we don't, a mock is sufficient.</p>
+<p>It can also be used to stand in for long running compute functions that we don't necessarily want to run every time we run <code>yarn test</code> .</p>
+<p>For example, if we have a file like this:</p>
+<pre><code class="language-typescript">// /app/service/send-sms.ts
+import { sendSms } from 'my_sms_library';
+
+/**
+ * Returns true when we successfully send an sms message
+ */
+export function sendSmsFromMe(destNumber: string, message: string): boolean {
+  // Maybe do some validation on the destinationNumber
+
+  try {
+    const smsResponse = sendSms({
+      sendingNumber: 'myNumber',
+      destinationNumber: destNumber,
+      message: message,
+      apiKey: '&lt;some precofigured thing&gt;'
+    });
+
+    if(smsResponse.code === 200) {
+      return true;
+    }
+  } catch { 
+    return false; 
+  }
+  return false;
+}
+</code></pre>
+<p>We may want to pretend to call <code>sendSms</code> instead of actually calling it (so we don't send a real sms out or spam the sms provider with junk).</p>
+<p>However, Good Unit Testing principles dictate that we should make sure that <code>sendSmsFromMe</code> returns the correct response when <code>sendSms</code> gives us an error or something, so let's just pretend we own <code>sendSms</code> instead.</p>
+<p>Below is the code for the minimal mock of the function where we tell it what we expect (I haven't tested this though whoops):</p>
+<pre><code class="language-typescript">// /test/service/send-sms.test.ts
+import { sendSms } from 'my_sms_library';
+import { sendSmsFromMe } from '/app/service/send-sms.ts';
+
+jest.mock('my_sms_library');
+// You can also specify the mock type, but I haven't here.
+const mockedSendSms = sendSms as jest.Mock;
+
+describe('send-sms', () =&gt; {
+  describe('sendSmsFromMe', () =&gt; {
+
+    afterEach(() =&gt; {
+      // Remove any lingering metadata about the mock
+      mockedSendSms.clearMock();
+    });
+
+    it('Returns true when the service returns a 200 code', () =&gt; {
+      mockedSendSms.mockResolvedValue({ code: 200, messageId: '123445315' });
+      expect(sendSmsFromMe('&lt;my number&gt;', 'Hello stranger!')).toBe(true);
+    });
+
+    it('Returns false when the service returns something other than a 200 code', () =&gt; {
+      mockedSendSms.mockResolvedValue({ code: 400, error: `That didn't work!` });
+      expect(sendSmsFromMe('&lt;my number&gt;', 'Hello stranger!')).toBe(false);
+    });
+
+    it('Returns false when the service throws an error', () =&gt; {
+      mockedSendSms.mockImplementation(() =&gt; {throw new Error(`Hey! I don't like that!`)});
+      expect(sendSmsFromMe('&lt;my number&gt;', 'Hello stranger!')).toBe(false);
+    });
+  });
+});
+</code></pre>
+<p>We can also interrogate the mock to see how many times it was called, and with what arguments.</p>
+<p>It'd not be good for say, an SMS Api to accidentally get called multiple times to send 1 SMS, so this can be helpful to test.</p>
+<pre><code class="language-typescript">// /test/service/send-sms.test.ts
+import { sendSms } from 'my_sms_library';
+import { sendSmsFromMe } from '/app/service/send-sms.ts';
+
+jest.mock('my_sms_library');
+// You can also specify the mock type, but I haven't here.
+const mockedSendSms = sendSms as jest.Mock;
+
+describe('send-sms', () =&gt; {
+  describe('sendSmsFromMe', () =&gt; {
+
+    afterEach(() =&gt; {
+      // Remove any lingering metadata about the mock
+      mockedSendSms.clearMock();
+    });
+
+    it('Returns true when the service returns a 200 code', () =&gt; {
+      mockedSendSms.mockResolvedValue({ code: 200, messageId: '123445315' });
+      expect(sendSmsFromMe('&lt;my number&gt;', 'Hello stranger!')).toBe(true);
+    });
+
+    it('Only calls the Sms Library once per sms request', () =&gt; {
+      mockedSendSms.mockResolvedValue({ code: 200, messageId: '123445315' });
+      sendSmsFromMe('&lt;my number&gt;', 'Hello stranger!');
+      expect(mockedSendSms).toBeCalledTimes(1);
+    });
+
+    // You'd probably pre-configure these in some kind of config file, and you might keep a dummy copy in your repo for this particular test.
+    it('Adds the api key and my number as the source!', () =&gt; {
+      mockedSendSms.mockResolvedValue({ code: 200, messageId: '123445315' });
+      sendSmsFromMe('&lt;my number&gt;', 'Hello stranger!');
+      expect(mockedSendSms).toBeCalledWith({
+        sendingNumber: 'myNumber',
+        destinationNumber: '&lt;my number&gt;',
+        message: 'Hello stranger!',
+        apiKey: '&lt;some precofigured thing&gt;'
+      });
+    });
+
+    // ... other tests redacted
+  });
+});
+</code></pre>
+<p>Don't forget you can use the scope of your containing block to reduce the number of strings you have to retype, or the number of similar mocks you need to set up!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mocking-singletons-with-jest"><a class="header" href="#mocking-singletons-with-jest">Mocking Singletons with Jest</a></h1>
+<p>Singletons are a common design pattern in a reasonable amount of software. The typical case is that you have some configuration data that you want to use in your service that you don't want to retrieve or parse each time the service is created.</p>
+<p>Unfortunately, since singletons give you a weird call pattern, mocking their functions is a bit of a pain.</p>
+<p>One solution is to refactor the singleton service to be provided via <a href="https://app.clickup.com/6943244/v/dc/6kwgc-1766/6kwgc-72782">dependency injection</a>, but this does add some amount of structural overhead to your application, may require learning a framework, and otherwise requires justifying the work to actually implement.</p>
+<p>We can, however, mock the singleton functions using Jest Spies.</p>
+<p>Wait! I just said that spies don't change their target's behaviour!</p>
+<p>Well... They can in Jest! Probably because they can in other mocking frameworks, and Jest thinks it wants to be the testing framework to end all the rest.</p>
+<p>It's a good thing too, since the way that regular jest mocking works isn't really conducive to dealing with class instances.</p>
+<p>Take for example the following service and consumer, and let's say we want to test the consumer works properly.</p>
+<pre><code class="language-typescript">// src/service/db-service.ts
+export class DbService {
+	private static instance: DbService;
+	public static getInstance(): DbService {
+		if (this.instance == null) {
+			this.instance = new DbService();
+		}
+		return this.instance;
+	}
+
+	private connectionString: string;
+
+	private constructor() {
+		if (!process.env.DB_CONNECTION_STRING) {
+			throw new Error('process.env.DB_CONNECTION_STRING not set');
+		}
+		this.connectionString = process.env.DB_CONNECTION_STRING;
+	}
+
+    /** Retrieves the record with the given ID from the database */
+	async getRecord(recordId: string): Promise&lt;{ id: string; value: string }&gt; {
+		// Actual implementation removed because we don't care, let's return some random string for now.
+		return { id: recordId, value: 'Hello World!' };
+	}
+}
+</code></pre>
+<pre><code class="language-typescript">// src/service/email-service.ts
+
+/** Retrieves a given record from the DB and renders it as HTML */
+export async function renderRecordAsHtml(recordId: string): Promise&lt;string&gt; {
+	try {
+		const record = await DbService.getInstance().getRecord(recordId);
+		return `&lt;!Doctype html&gt;&lt;html&gt;&lt;body&gt;&lt;h1&gt;${record.id}&lt;/h1&gt;&lt;p&gt;${record.value}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;`;
+	} catch (e) {
+		throw new Error('Something went horribly wrong');
+	}
+}
+</code></pre>
+<pre><code class="language-typescript">// test/service/email-service.ts
+
+describe('renderRecordAsHtml', () =&gt; {
+    const mockRecordValue1 = 'Our own special record value!';
+	let dbServiceInstance: DbService;
+	let dbServiceSpy: jest.SpyInstance;
+
+	beforeAll(() =&gt; {
+		process.env.DB_CONNECTION_STRING = 'blah!';
+		// Get the service *before* running the suite, as we need to use the same class instance to mock it.
+		dbServiceInstance = DbService.getInstance();
+
+		// Now let's mock it
+		dbServiceSpy = jest.spyOn(dbServiceInstance, 'getRecord');
+		dbServiceSpy.mockImplementation((recordId: string) =&gt; {
+			return { id: recordId, value: mockRecordValue1 };
+		});
+	});
+
+	afterEach(() =&gt; {
+		dbServiceSpy.mockClear();
+	});
+
+	afterAll(() =&gt; {
+		delete process.env.DB_CONNECTION_STRING;
+		jest.resetAllMocks();
+	});
+
+	// We use our default (set in beforeAll()) if we don't override it
+	it('Inserts the record ID into a H1 tag', async () =&gt; {
+		const recordAsHtml = await renderRecordAsHtml('314');
+		expect(recordAsHtml).toEqual(expect.stringContaining(`&lt;h1&gt;314&lt;/h1&gt;`));
+	});
+
+	it('Inserts the value inside a paragraph tag', async () =&gt; {
+		const recordAsHtml = await renderRecordAsHtml('314');
+		expect(recordAsHtml).toEqual(expect.stringContaining(`&lt;p&gt;${mockRecordValue1}&lt;/p&gt;`));
+	});
+
+	// Or we can override it for this specific test set!
+	it('Inserts the record ID into a H1 tag after overriding the implementation', async () =&gt; {
+		const mockIdOnce = 'This is a fake ID!';
+		const mockRecordOnce = 'This is our own record :p';
+		dbServiceSpy.mockImplementationOnce(() =&gt; {
+			return { id: mockIdOnce, value: mockRecordOnce };
+		});
+
+		const recordAsHtml = await renderRecordAsHtml('314');
+		expect(recordAsHtml).toEqual(expect.stringContaining(`&lt;h1&gt;${mockIdOnce}&lt;/h1&gt;`));
+	});
+
+	// But this one still uses the default implementation!
+	it('Inserts the value inside a paragraph tag', async () =&gt; {
+		const recordAsHtml = await renderRecordAsHtml('314');
+		expect(recordAsHtml).toEqual(expect.stringContaining(`&lt;p&gt;${mockRecordValue1}&lt;/p&gt;`));
+	});
+
+	// We can even make it throw an error!
+	it('Throws ~Something went horribly wrong~ if the record is not found', async () =&gt; {
+		dbServiceSpy.mockImplementationOnce(() =&gt; {
+			throw new Error('Heck!');
+		});
+
+		try {
+			const recordAsHtml = await renderRecordAsHtml('314');
+			fail('Expected to throw error &quot;Something went horribly wrong&quot;, but did not');
+		} catch (e) {
+			expect(e).not.toBeNull();
+			expect(e).toEqual(new Error('Something went horribly wrong'));
+			expect(e).not.toEqual(new Error('Heck!'));
+		}
+	});
+});
+</code></pre>
+<p>The above will correctly mock the implementation of the <code>DbService</code>, but we still need to know the implementation details of <code>DbService.getInstance()</code>.</p>
+<p>In particular, if you are testing multiple functions inside <code>email-service.ts</code> , you will need to allow a singleton reset so you aren't sharing state between tests, or structure your tests such that all the mocking is done before all the suites run. This is pretty annoying IMO.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="spying-on-functions-with-jest"><a class="header" href="#spying-on-functions-with-jest">Spying on functions with Jest</a></h1>
+<p>Okay, so we can see the obvious use case for mocking - we don't want to call an AWS Service for example, but maybe we are testing something that handles some data it might return.</p>
+<p>But when would we use spying? And how do we call it in Jest?</p>
+<p>Generally, spying is used when we don't want to change the implementation of a class, but we do care about how it's being used.</p>
+<p>Here's some generic examples where you'd maybe want to use a spy over a mock:</p>
+<ul>
+<li>I need to test my http client service is only sending one request when I call it, and is not meaningfully modifying the responses. I'd use a Spy + a tool like Nock to create generic test cases.</li>
+</ul>
+<p>When testing the consumers of this service, I will write a stub for this service.</p>
+<ul>
+<li>I have some publisher/subscriber model, and I really need to make sure the subscriber is receiving notifications in specific circumstances (ie: I have a checkbox checked).</li>
+</ul>
+<p>I don't want to mock this subscriber particularly, but I need to verify that the subscription and unsubscription is actually working as I intended.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mocking-restapis-with-nock"><a class="header" href="#mocking-restapis-with-nock">Mocking RestAPIs with Nock</a></h1>
+<p><a href="https://github.com/nock/nock">nock/nock: HTTP server mocking and expectations library for Node.js (github.com)</a></p>
+<p>Nock is a framework that allows the tester to mock restAPI responses, in HTTP format even.</p>
+<p>This allows us to test our code against diverse responses, without the need for an integration server.</p>
+<p>It can also let us get a little creative with our validation code, and ensure that we are handling unexpected responses correctly.</p>
+<p>For example, the <code>axios</code> library provides async http calls to other services, but itself as a service can be hard to mock correctly, as its error handling can be somewhat subtle.</p>
+<p><code>nock</code> allows us to verify our code against what axios would actually do in a specific reaponse case (say, a 404 error), as opposed to us guessing based off their documents.</p>
+<p>Nock automatically converts header keys in requests to lower case. In most cases, API gateways should also be case insensitive, but be sure to check this before relying on Nock to test your request headers.</p>
+<p>For example, the following header arrangements should be equivalent on most HTTP servers:</p>
+<pre><code class="language-json">{
+    &quot;Authorization&quot;:&quot;MyAuthKey&quot;, 
+    &quot;accept&quot;:&quot;application/json&quot;, 
+    &quot;deviceId&quot;:&quot;12345&quot;
+}
+
+{
+    &quot;authorization&quot;:&quot;MyAuthKey&quot;, 
+    &quot;accept&quot;:&quot;application/json&quot;, 
+    &quot;deviceid&quot;:&quot;12345&quot;
+}
+</code></pre>
+<p>However some specific server implementations may not be the case. Using Nock to test your header arrangements are cased correctly may not be a suitable test in this case.</p>
+<p>The following describes a possible test pattern using Nock to control axios calls:</p>
+<pre><code class="language-typescript">import nock from 'nock';
+import * as AuthService from '/app/service/authentication-service';
+import { CustomError } from '/app/service/error';
+import axios from 'axios';
+
+// Make sure Axios will work with Nock
+axios.defaults.adapter = require('axios/lib/adapters/http');
+
+describe('authenticate', () =&gt; {
+    const authDomainRoot = 'https://example.com';
+    const authUrlPath = '/auth';
+
+    afterEach(() =&gt; {
+        // Don't forget to reset any Nock mocks after each test (since we are mocking per-test)
+        nock.cleanAll();
+    });
+
+    it('Throws a specific error if the Auth API returns 400', async () =&gt; {
+        const scope = nock(authDomainRoot).post(authUrlPath).reply(400, {});
+
+        try {
+            const response = await AuthService.authenticate('thisIsAnAuthCode', 'thisIsNotAJwt');
+            console.log(response);
+            fail('Expected to throw CustomError but did not');
+        } catch (e) {
+            if (!(e instanceof CustomError)) {
+                fail('Expected to throw CustomError, but threw something else');
+            } else {
+                const specificCustomErr = new CustomError(400, '07', `Something went wrong, please try again`);
+                expect(e.errorCode).toEqual(specificCustomErr.errorCode);
+                expect(e.message).toEqual(specificCustomErr.message);
+                expect(e.httpCode).toEqual(specificCustomErr.httpCode);
+            }
+        }
+    });
+
+    it('Throws a specific error if the Auth API returns 500', async () =&gt; {
+        const scope = nock(authDomainRoot).post(authUrlPath).reply(500, {});
+
+        try {
+            const response = await AuthService.authenticate('thisIsAnAuthCode', 'thisIsNotAJwt');
+            console.log(response);
+            fail('Expected to throw CustomError but did not');
+        } catch (e) {
+            if (!(e instanceof CustomError)) {
+                fail('Expected to throw CustomError, but threw something else');
+            } else {
+                const specificCustomErr = new CustomError(500, '10', `Something went wrong, please try again`);
+                expect(e.errorCode).toEqual(specificCustomErr.errorCode);
+                expect(e.message).toEqual(specificCustomErr.message);
+                expect(e.httpCode).toEqual(specificCustomErr.httpCode);
+            }
+        }
+    });
+
+    it('Returns the same tokens provided by the Auth API', async () =&gt; {
+        const mockAccessToken = 'ThisIsAnAccessToken';
+        const mockRefreshToken = 'ThisIsARefreshToken';
+        const scope = nock(authDomainRoot)
+            .post(authUrlPath)
+            .reply(200, { access_token: mockAccessToken, refresh_token: mockRefreshToken });
+
+        const response = await AuthService.authenticate('thisIsAnAuthCode', 'thisIsNotAJwt');
+        expect(response.accessToken).toEqual(mockAccessToken);
+        expect(response.refreshToken).toEqual(mockRefreshToken);
+    });
+
+    it('The provided authCode is present in the body', async () =&gt; {
+        const mockAccessToken = 'ThisIsAnAccessToken';
+        const mockRefreshToken = 'ThisIsARefreshToken';
+        const mockAuthCode = 'thisIsAnAuthCode';
+        let caughtBody;
+        const scope = nock(authDomainRoot)
+            .post(authUrlPath)
+            .reply(200, function (uri, reqBody) {
+                caughtBody = reqBody;
+                return { access_token: mockAccessToken, refresh_token: mockRefreshToken };
+            });
+
+        await AuthService.authenticate(mockAuthCode, 'thisIsNotAJwt');
+        const bodyAsParams = new URLSearchParams(caughtBody);
+        expect(bodyAsParams.get('code')).toEqual(mockAuthCode);
+        expect(bodyAsParams.get('grant_type')).toEqual('authorization_code');
+    });
+
+    it('The provided clientAssertion is present in the body', async () =&gt; {
+        const mockAccessToken = 'ThisIsAnAccessToken';
+        const mockRefreshToken = 'ThisIsARefreshToken';
+        const mockJwt = 'thisIsNotAJwt';
+        let caughtBody;
+        const scope = nock(authDomainRoot)
+            .post(authUrlPath)
+            .reply(200, function (uri, reqBody) {
+                caughtBody = reqBody;
+                return { access_token: mockAccessToken, refresh_token: mockRefreshToken };
+            });
+
+        await AuthService.authenticate('thisIsAnAuthCode', mockJwt);
+        const bodyAsParams = new URLSearchParams(caughtBody);
+        expect(bodyAsParams.get('client_assertion')).toEqual(mockJwt);
+        expect(bodyAsParams.get('client_assertion_type')).toEqual(
+            'urn:ietf:params:oauth:client-assertion-type:jwt-bearer'
+        );
+    });
+});
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mocking-aws-services-with-aws-sdk-mock"><a class="header" href="#mocking-aws-services-with-aws-sdk-mock">Mocking AWS Services with <code>aws-sdk-mock</code></a></h1>
+<p><code>aws-sdk-mock</code> gives the user a little more control over mocking the Aws SDK. Specifically, it overrides specific functions of the SDK with your own implementation, preserving the type contract.</p>
+<p>Note: `aws-sdk-mock` is built for the 'v2' version of the `aws-sdk`.<br />
+For v3 (ie the one that uses `@aws-sdk/client-<service>`), use <a href="https://github.com/m-radzikowski/aws-sdk-client-mock">https://github.com/m-radzikowski/aws-sdk-client-mock</a></p>
+<p>The standard pattern for mocking with <code>aws-sdk-mock</code> and <code>jest</code> looks like so:</p>
+<pre><code class="language-typescript">import AWSMock from 'aws-sdk-mock';
+import AWS from 'aws-sdk';
+import { getFile } from 'app/service/s3-service'; // This is our wrapper service for S3
+
+import type { GetObjectOutput, GetObjectRequest } from 'aws-sdk/clients/s3';
+
+describe('s3-service', () =&gt; {
+    describe('getFile', () =&gt; {
+        // Create a Jest Mock Function that we can query about calls later.
+        let mockGetObject: jest.Mock&lt;GetObjectOutput, [req: GetObjectRequest]&gt;;
+        beforeAll(() =&gt; {
+            // Write an implementation for our Jest Mock
+            mockGetObject = jest.fn((req: GetObjectRequest): GetObjectOutput =&gt; {
+                return { Body: 'Test Body', VersionId: 'V1' };
+            });
+
+
+            // Note that we need to set the AWS SDK instance before we try to mock it.
+            AWSMock.setSDKInstance(AWS);
+            // Overwrite S3.getObject() with AWSMock. 
+            // Note that we use the `callback()` function, leaving the Error side undefined.
+            AWSMock.mock('S3', 'getObject', (params, callback) =&gt; {
+                callback(undefined, mockGetObject(params));
+            });
+        });
+
+        afterAll(() =&gt; {
+            // Restore S3's normal functionality
+            AWSMock.restore('S3', 'getObject');
+            // Clear out the Jest Mock as well, just to be safe
+            jest.resetAllMocks();
+        });
+
+        afterEach(() =&gt; {
+            // Clear data from the mock, ie how many times it was called, etc
+            mockGetObject.mockClear();
+        });
+
+        // Test that our wrapper is returning what we told it to from the mock
+        it('Returns the requested file if the file exists', async () =&gt; {
+            const awsResp = await getFile('testBucket', 'testFolder/testFile.txt');
+
+            expect(awsResp).toEqual({ Body: 'Test Body', VersionId: 'V1' });
+        });
+
+        // Test that we aren't calling S3 more than we have to
+        it('Calls the getObject function once per request', async () =&gt; {
+            await getFile('testBucket', 'testFolder/testFile.txt');
+
+            expect(mockGetObject).toHaveBeenCalledTimes(1);
+        });
+    });
+});
+
+
+</code></pre>
+<p>This pattern allows us to modify the return of an AWS SDK function individually, but also use a standard return in most cases.</p>
+<p>Note that the AWS SDK class and method are described by strings, which are equivalent to the name of the function you are overriding in your code. <code>aws-sdk-mock</code> should warn you if you are overriding it incorrectly.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mocking-aws-errors-without-aws-sdk-mock"><a class="header" href="#mocking-aws-errors-without-aws-sdk-mock">Mocking AWS Errors without <code>aws-sdk-mock</code></a></h1>
+<p>When testing unit behaviour in the event of an error, it can be helpful to mock when AWS returns some kind of error. The <code>aws-sdk</code> typically throws an <code>AWSError</code> object when it fails (as a promise rejection).</p>
+<p>Unfortunately, this data type is not something <code>jest</code> will typically handle in its <code>expect().toThrow()</code> matching hook.</p>
+<p>This pattern is known to work if there is a wrapper typescript service around the AWS SDK service (in the below example as <code>/app/service/s3-service.ts</code> ), but could potentially work with <code>aws-sdk-mock</code> as well.</p>
+<p>We can use the following pattern to mock an error response. This sample uses S3.</p>
+<pre><code class="language-typescript">// File: /app/service/s3-service.ts
+import { S3 } from 'aws-sdk';
+
+/**
+ * Retrieves a file from an S3 Bucket as an S3 Object
+ * @param Bucket The S3 bucket to fetch from
+ * @param Key The name + path of the file to fetch
+ * @returns The file as an S3 Object Promise
+ */
+export const getFile = async (Bucket: string, Key: string) =&gt;
+    new S3()
+        .getObject({
+            Bucket,
+            Key,
+        })
+        .promise();
+
+
+</code></pre>
+<pre><code class="language-typescript">// File: /app/service/s3-wrapper-service.ts
+import * as s3 from './s3-service';
+import type { PromiseResult } from 'aws-sdk/lib/request';
+import type { AWSError, S3 } from 'aws-sdk';
+
+/**
+ * Fetches the contents of a file from an S3 bucket as a string. Returns an empty string if the file doesn't exist. Throws an {@link AWSError} on any other failure.
+ * @param bucketName The name of the S3 bucket to read from
+ * @param key The file name + path to read.
+ * @returns The body of the file as a string. If the file doesn't exist, returns an empty string. If there is another error, throws it.
+ */
+export async function fetchFromS3(bucketName: string, key: string): Promise&lt;string&gt; {
+    let file: PromiseResult&lt;S3.GetObjectOutput, AWSError&gt;;
+
+    try {
+        file = await s3.getFile(bucketName, key);
+    } catch (e) {
+        const error = e as AWSError;
+
+        // If no files exists - just treat it as an empty file
+        if (error.code === 'NoSuchKey') {
+            return '';
+        }
+        throw e;
+    }
+    if (!file.Body) {
+        // If the file doesn't exist - just treat it as an empty one
+        return '';
+    }
+    return file.Body.toString();
+}
+</code></pre>
+<pre><code class="language-typescript">// File: /test/s3-wrapper-service.test.ts
+import * as s3 from 'app/service/s3-service';
+import { fetchFromS3 } from 'app/service/s3-wrapper-service';
+import type { AWSError } from 'aws-sdk';
+
+jest.mock('app/service/s3-service');
+
+describe('fetchFromS3', () =&gt; {
+    it('Returns an empty string if S3 returned `NoSuchKey` as an error', async () =&gt; {
+        const noSuchKeyError: AWSError = {
+            code: 'NoSuchKey',
+            message: 'NoSuchKey error',
+            name: 'No Such Key error or something',
+            time: new Date(),
+        };
+        (s3.getFile as jest.Mock).mockRejectedValue(noSuchKeyError);
+        const result = await fetchFromS3(process.env.DH_MIRROR_BUCKET!, 'testfile.csv');
+        expect(result).toEqual('');
+    });
+    
+    it(&quot;Throws S3 errors that aren't `NoSuchKey`&quot;, async () =&gt; {
+      const otherError: AWSError = {
+          code: 'ServiceUnavailable',
+          message: 'need more kfc 21 piece buckets',
+          name: 'ServiceUnavailable',
+          time: new Date(),
+      };
+      (s3.getFile as jest.Mock).mockRejectedValue(otherError);
+    
+      try {
+          await fetchFromS3('test-bucket', 'current.json');
+          fail('Expected to throw but did not');
+      } catch (e) {
+          expect(s3.getFile).toBeCalledWith('test-bucket', 'current.json');
+          expect(e).toBe(otherError);
+      }
+    });
+});
+</code></pre>
+<p>Note the <code>try/fail/catch</code> block in the second <code>it()</code> statement.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mocking-aws-promiseresult"><a class="header" href="#mocking-aws-promiseresult">Mocking AWS PromiseResult</a></h1>
+<p>Occasionally, there is the use case in the AWS SDK to inspect the raw <code>$response</code> object that AWS returns inside some SDK Result. This contains errors and the raw HTTP response object.</p>
+<p>Unfortunately, doing this in application code means that you also need to mock it in your AWS Mocks.</p>
+<p>Below is an example of this working correctly for KMS:</p>
+<pre><code class="language-typescript">// /test/mocks/aws-result.ts
+import AWS from 'aws-sdk';
+import { PromiseResult } from 'aws-sdk/lib/request';
+
+/** This produces a valid AWS PromiseResult that a mock funtion could return */
+export function awsSuccessPromiseResult&lt;T&gt;(resp: T): PromiseResult&lt;T, AWS.AWSError&gt; {
+	return {
+		...resp,
+		$response: {
+			data: resp,
+			hasNextPage: () =&gt; {
+				return false;
+			},
+			requestId: '',
+			redirectCount: 0,
+			retryCount: 0,
+			nextPage: () =&gt; {},
+			error: undefined,
+			httpResponse: {
+				body: '',
+				headers: {},
+				statusCode: 200,
+				statusMessage: 'OK',
+				streaming: false,
+				createUnbufferedStream: () =&gt; {
+					return {};
+				},
+			},
+		},
+	};
+}
+
+/** This produces a valid AWS Error PromiseResult response */
+export function awsErrorPromiseResult(): PromiseResult&lt;any, AWS.AWSError&gt; {
+	const otherError: AWS.AWSError = {
+		code: 'ServiceUnavailable',
+		message: 'need more kfc 21 piece buckets',
+		name: 'ServiceUnavailable',
+		time: new Date(),
+	};
+	return {
+		$response: {
+			data: undefined,
+			hasNextPage: () =&gt; {
+				return false;
+			},
+			requestId: '',
+			redirectCount: 0,
+			retryCount: 0,
+			nextPage: () =&gt; {},
+			error: otherError,
+			httpResponse: {
+				body: '',
+				headers: {},
+				statusCode: 200,
+				statusMessage: 'OK',
+				streaming: false,
+				createUnbufferedStream: () =&gt; {
+					return {};
+				},
+			},
+		},
+	};
+}
+</code></pre>
+<pre><code class="language-typescript">// /test/jwt-service.test.ts
+import jwt from 'jsonwebtoken';
+import AWSMock from 'aws-sdk-mock';
+import AWS from 'aws-sdk';
+import KMS from 'aws-sdk/clients/kms';
+import { PromiseResult } from 'aws-sdk/lib/request';
+import { awsSuccessPromiseResult } from './mocks/aws-results';
+
+describe('JwtService', () =&gt; {
+	let mockSign;
+	beforeAll(() =&gt; {
+		mockSign = jest.fn((req: KMS.SignRequest): PromiseResult&lt;KMS.SignResponse, AWS.AWSError&gt; =&gt; {
+			const resp = {
+				KeyId: req.KeyId,
+				SigningAlgorithm: req.SigningAlgorithm,
+				Signature: 'ThisSignatureVerifiesThatTheJwtIsToooootallyLegit',
+			};
+			return awsSuccessPromiseResult(resp);
+		});
+
+		// Overwriting KMS.sign()
+		AWSMock.setSDKInstance(AWS);
+		AWSMock.mock('KMS', 'sign', (params, callback) =&gt; {
+			callback(undefined, mockSign(params));
+		});
+	});
+
+	afterAll(() =&gt; {
+		// Restore KMS
+		AWSMock.restore('KMS', 'sign');
+		jest.resetAllMocks();
+	});
+
+	describe('signJwt', () =&gt; {
+		afterEach(() =&gt; {
+			mockSign.mockClear();
+		});
+
+		it('Mocks the signature correctly', async () =&gt; {
+			const response = await new KMS().sign({
+			    Message: '{&quot;recordA&quot;:&quot;A very transgender value&quot;, ...&lt;other JWT stuff&gt;}',
+			    KeyId: '99999',
+			    SigningAlgorithm: 'RSASSA_PKCS1_V1_5_SHA_256',
+			    MessageType: 'RAW',
+		    })
+		    .promise();
+			console.log(response);
+			console.log(JSON.stringify(jwt.decode(response)));
+			expect(true).toBeTruthy();
+		});
+	});
+});
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="using-jest-with-vscode"><a class="header" href="#using-jest-with-vscode">Using Jest with VSCode</a></h1>
+<p>The main Jest plugin for VSCode is here: <a href="https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest">Jest - Visual Studio Marketplace</a></p>
+<p>There is a config setting to turn off running tests automatically on save - add the following line to your <code>settings.json</code> file:</p>
+<pre><code class="language-plain">&quot;jest.autoRun&quot;: &quot;off&quot;,
+</code></pre>
+<p>The plugin is known to not work so well with yarn workspaces. In this case, it may be easier to simply use the CLI commands:</p>
+<p><a href="https://jestjs.io/docs/cli">Jest CLI Options · Jest (jestjs.io)</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hacks"><a class="header" href="#hacks">Hacks</a></h1>
+<h2 id="boolean-logic-for-expect-statements"><a class="header" href="#boolean-logic-for-expect-statements">Boolean logic for Expect statements</a></h2>
+<p>We can write a fairly comprehensive test by using multiple <code>expect</code> statements in one test. ie:</p>
+<pre><code class="language-typescript">it('Does 2 things', () =&gt; {
+  expect(thingOne).toBeTruthy();
+  expect(thingTwo).toBeTruthy();
+});
+</code></pre>
+<p>This gives us the equivalent of a logical AND statement - if anything fails, the whole test fails.</p>
+<p>Jest, however, doesn't support logical OR on first inspection, ie:</p>
+<pre><code class="language-typescript">it('Does one of 2 things', () =&gt; {
+  expect(result).toBe(thingOne jest.or thingTwo);
+});
+</code></pre>
+<p>This makes sense somewhat, a unit really shouldn't have 2 equally valid outputs for 1 input.</p>
+<p>However occasionally we might test something where it is helpful - like testing a mock where the call order doesn't matter.</p>
+<p>In this case we can wrap the <code>expect</code> in a <code>try/catch</code> , and it will take either option. Example:</p>
+<pre><code class="language-typescript">it('Calls the mock service with one of 2 arg sets', () =&gt; {
+  try{
+    expect(mockService).toBeCalledWith({ argA: 'myArgA', argB: 'myArgB' });
+  } catch {
+    expect(mockService).toBeCalledWith({ argA: 'yourArgA', argB: 'yourArgB' });
+  }
+});
+</code></pre>
+<p>In this case, only 1 of the expect statements is required for the test to pass.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="samples"><a class="header" href="#samples">Samples</a></h1>
+<h2 id="expressiveness"><a class="header" href="#expressiveness">Expressiveness</a></h2>
+<p>Here is a very expressive sample for a date/time validation function.</p>
+<p>Using such detailed samples allows us to find the exact places and edge cases that a service might fail if adjusted.</p>
+<p>In reality, I'd probably use an <a href="jest/./repeated_tests.html"><code>it.each()</code></a> expression to write this, but it gives us a very well-described function anyhow.</p>
+<pre><code class="language-typescript">describe('validateDateTimeString', () =&gt; {
+    describe('Date strings', () =&gt; {
+        it('Accepts a well formatted string', () =&gt; {
+            expect(validateDateTimeString('01/01/2021', 'dd/MM/yyyy')).toBeTruthy();
+        });
+
+        it(&quot;Rejects a string that requires leading zeroes, but doesn't supply them&quot;, () =&gt; {
+            expect(validateDateTimeString('1/1/2021', 'dd/MM/yyyy')).toBeFalsy();
+        });
+
+        it('Rejects a date where the year position is not where it is expected', () =&gt; {
+            expect(validateDateTimeString('2021/01/01', 'dd/MM/yyyy')).toBeFalsy();
+        });
+
+        it('Rejects a date where the day value is larger than can be in any month', () =&gt; {
+            expect(validateDateTimeString('90/01/2021', 'dd/MM/yyyy')).toBeFalsy();
+        });
+
+        it('Rejects a date where the month value is larger than 12', () =&gt; {
+            expect(validateDateTimeString('01/90/2021', 'dd/MM/yyyy')).toBeFalsy();
+        });
+
+        it('Rejects a date where the year value is longer than the required four digits', () =&gt; {
+            expect(validateDateTimeString('01/01/12021', 'dd/MM/yyyy')).toBeFalsy();
+        });
+
+        it('Rejects a date where the day value (40) is larger than can be for a given month', () =&gt; {
+            expect(validateDateTimeString('40/08/2021', 'dd/MM/yyyy')).toBeFalsy();
+        });
+
+        it('Rejects a date where the day value is in the months column (ie - American formatting)', () =&gt; {
+            expect(validateDateTimeString('04/30/2021', 'dd/MM/yyyy')).toBeFalsy();
+        });
+
+        it('Accepts a date where the day value (30) is within the given month (April)', () =&gt; {
+            expect(validateDateTimeString('30/04/2021', 'dd/MM/yyyy')).toBeTruthy();
+        });
+
+        it('Rejects a date where the day value (31) is larger than can be for a given month (April)', () =&gt; {
+            expect(validateDateTimeString('31/04/2021', 'dd/MM/yyyy')).toBeFalsy();
+        });
+
+        it('Accepts a date where the day value (31) is within the given month (January)', () =&gt; {
+            expect(validateDateTimeString('31/01/2021', 'dd/MM/yyyy')).toBeTruthy();
+        });
+
+        it('Rejects a date where the day value (32) is larger than can be for a given month (January)', () =&gt; {
+            expect(validateDateTimeString('32/01/2021', 'dd/MM/yyyy')).toBeFalsy();
+        });
+
+        it('Accepts a date where the day value (28) exists for the given February (2022)', () =&gt; {
+            expect(validateDateTimeString('28/02/2022', 'dd/MM/yyyy')).toBeTruthy();
+        });
+
+        it('Rejects a date where the day value (29) does not exist for the given February (2022)', () =&gt; {
+            expect(validateDateTimeString('29/02/2022', 'dd/MM/yyyy')).toBeFalsy();
+        });
+
+        it('Accepts a date where the day value (29) exists for the given February (2024)', () =&gt; {
+            expect(validateDateTimeString('29/02/2024', 'dd/MM/yyyy')).toBeTruthy();
+        });
+
+        it('Rejects a date where the day value (30) does not exist for the given February (2024)', () =&gt; {
+            expect(validateDateTimeString('30/02/2024', 'dd/MM/yyyy')).toBeFalsy();
+        });
+
+        it('Accepts a date where the day value (28) exists for the given February (2100)', () =&gt; {
+            expect(validateDateTimeString('28/02/2100', 'dd/MM/yyyy')).toBeTruthy();
+        });
+
+        it('Rejects a date where the day value (29) does not exist for the given February (2100)', () =&gt; {
+            expect(validateDateTimeString('29/02/2100', 'dd/MM/yyyy')).toBeFalsy();
+        });
+
+        it('Rejects a date that is given in English instead of the required date string', () =&gt; {
+            expect(validateDateTimeString('1st of January 2021', 'dd/MM/yyyy')).toBeFalsy();
+        });
+    });
+
+    describe('Time strings', () =&gt; {
+        it('Accepts a time string that is formatted correctly for the given format', () =&gt; {
+            expect(validateDateTimeString('01:01:01', 'HH:mm:ss')).toBeTruthy();
+        });
+
+        it('Rejects a time with an hour value that is too high', () =&gt; {
+            expect(validateDateTimeString('60:01:01', 'HH:mm:ss')).toBeFalsy();
+        });
+
+        it('Rejects a time with a minute value that is too high', () =&gt; {
+            expect(validateDateTimeString('01:90:01', 'HH:mm:ss')).toBeFalsy();
+        });
+
+        it('Rejects a time with a second value that is too high', () =&gt; {
+            expect(validateDateTimeString('01:01:90', 'HH:mm:ss')).toBeFalsy();
+        });
+
+        it('Rejects a time with a value written in english, instead of the required date format', () =&gt; {
+            expect(validateDateTimeString('midnight', 'HH:mm:ss')).toBeFalsy();
+        });
+    });
+});
+
+
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="mermaid.min.js"></script>
+        <script type="text/javascript" src="mermaid-init.js"></script>
+
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </body>
+</html>

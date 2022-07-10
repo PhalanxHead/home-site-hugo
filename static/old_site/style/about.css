@@ -1,0 +1,19 @@
+ul.my-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+ul.my-links li {
+    float: left;
+    padding: 1em;
+    color: var(--text-color);
+}
+
+ul.my-links a {
+    text-decoration: none;
+}

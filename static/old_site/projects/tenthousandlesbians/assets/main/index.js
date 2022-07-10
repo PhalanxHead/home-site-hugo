@@ -1,0 +1,24 @@
+System.register("chunks:///_virtual/RandomSpawner.ts",["./_rollupPluginModLoBabelHelpers.js","cc"],(function(e){"use strict";var n,t,i,r,a,o,l,s,u,p,c,g,b,f,d,w,m,y,h;return{setters:[function(e){n=e.applyDecoratedDescriptor,t=e.inheritsLoose,i=e.initializerDefineProperty,r=e.assertThisInitialized,a=e.defineProperty},function(e){o=e.cclegacy,l=e._decorator,s=e.Prefab,u=e.CCInteger,p=e.Vec2,c=e.CCFloat,g=e.Material,b=e.CCString,f=e.Node,d=e.randomRange,w=e.Vec3,m=e.MeshRenderer,y=e.instantiate,h=e.Component}],execute:function(){var R,M,S,x,z,v,P,C,L,I,A,N,_,X,Y,Z,D,F,V,k,E;o._RF.push({},"253a8dNVLtE0KSaSd696TQN","RandomSpawner",void 0);var H=l.ccclass,T=l.property;e("RandomSpawner",(R=H("RandomSpawner"),M=T(s),S=T(u),x=T(p),z=T(p),v=T(p),P=T(c),C=T([g]),L=T(b),I=T(f),R((_=n((N=function(e){function n(){for(var n,t=arguments.length,o=new Array(t),l=0;l<t;l++)o[l]=arguments[l];return n=e.call.apply(e,[this].concat(o))||this,i(r(n),"spawningPrefab",_,r(n)),i(r(n),"spawnAmount",X,r(n)),i(r(n),"positionRangeX",Y,r(n)),i(r(n),"positionRangeY",Z,r(n)),i(r(n),"positionRangeZ",D,r(n)),i(r(n),"maxSize",F,r(n)),i(r(n),"startingLesbianMaterials",V,r(n)),i(r(n),"startingSeed",k,r(n)),i(r(n),"spawningParent",E,r(n)),a(r(n),"currentMaterialIndex",0),n}t(n,e);var o=n.prototype;return o.start=function(){var e=this;console.log("Started!"),console.log("lesbian length: "+this.startingLesbianMaterials.length),Array.from(Array(this.spawnAmount).keys()).forEach((function(n){var t=d(e.positionRangeX.x,e.positionRangeX.y),i=d(e.positionRangeY.x,e.positionRangeY.y),r=d(e.positionRangeZ.x,e.positionRangeZ.y),a=d(0,e.maxSize);(function(e,n,t,i){var r=y(t);return r.setPosition(e),r.setScale(n,n,n),i.addChild(r),r})(new w(t,i,r),a,e.spawningPrefab,e.spawningParent).getComponent(m).setMaterial(e.getNextMaterial(),0)}))},o.getNextMaterial=function(){var e=this.startingLesbianMaterials[this.currentMaterialIndex];return this.currentMaterialIndex+=1,this.currentMaterialIndex>=this.startingLesbianMaterials.length&&(this.currentMaterialIndex=0),e},n}(h)).prototype,"spawningPrefab",[M],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),X=n(N.prototype,"spawnAmount",[S],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 10}}),Y=n(N.prototype,"positionRangeX",[x],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new p(-10,10)}}),Z=n(N.prototype,"positionRangeY",[z],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new p(-10,10)}}),D=n(N.prototype,"positionRangeZ",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new p(-10,10)}}),F=n(N.prototype,"maxSize",[P],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 5}}),V=n(N.prototype,"startingLesbianMaterials",[C],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),k=n(N.prototype,"startingSeed",[L],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return"Hello World!"}}),E=n(N.prototype,"spawningParent",[I],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),A=N))||A));o._RF.pop()}}}));
+
+System.register("chunks:///_virtual/RotateAroundY.ts",["./_rollupPluginModLoBabelHelpers.js","cc"],(function(t){"use strict";var e,r,o,n,i,a,u,c;return{setters:[function(t){e=t.applyDecoratedDescriptor,r=t.inheritsLoose,o=t.initializerDefineProperty,n=t.assertThisInitialized},function(t){i=t.cclegacy,a=t._decorator,u=t.CCFloat,c=t.Component}],execute:function(){var s,l,p,d,f;i._RF.push({},"96ac4NGgC9Aup7Ak7u6cgLO","RotateAroundY",void 0);var h=a.ccclass,y=a.property;t("RotateAroundY",(s=h("RotateAroundY"),l=y(u),s((f=e((d=function(t){function e(){for(var e,r=arguments.length,i=new Array(r),a=0;a<r;a++)i[a]=arguments[a];return e=t.call.apply(t,[this].concat(i))||this,o(n(e),"rotateSpeed",f,n(e)),e}r(e,t);var i=e.prototype;return i.start=function(){},i.update=function(t){var e=this.node.eulerAngles;this.node.setRotationFromEuler(0,e.y+t+this.rotateSpeed,0)},e}(c)).prototype,"rotateSpeed",[l],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),p=d))||p));i._RF.pop()}}}));
+
+System.register("chunks:///_virtual/main",["./RandomSpawner.ts","./RotateAroundY.ts"],(function(){"use strict";return{setters:[null,null],execute:function(){}}}));
+
+(function(r) {
+  r('virtual:///prerequisite-imports/main', 'chunks:///_virtual/main'); 
+})(function(mid, cid) {
+    System.register(mid, [cid], function (_export, _context) {
+    return {
+        setters: [function(_m) {
+            var _exportObj = {};
+
+            for (var _key in _m) {
+              if (_key !== "default" && _key !== "__esModule") _exportObj[_key] = _m[_key];
+            }
+      
+            _export(_exportObj);
+        }],
+        execute: function () { }
+    };
+    });
+});

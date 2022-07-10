@@ -1,0 +1,135 @@
+/** Dark Mode CSS based on: https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/ */
+
+:root {
+    color-scheme: light dark;
+    /* both supported */
+}
+
+body {
+    --text-color: #222;
+    --bkg-color: #fff;
+    --dark-toggle-text: 'Dark Mode';
+    --link-color: blue;
+    --link-visited-color: purple;
+    --link-hover-color: hotpink;
+    --link-active-color: pink;
+}
+
+body.dark-theme {
+    --text-color: #eee;
+    --bkg-color: #171B22;
+    --dark-toggle-text: 'Light Mode';
+    --link-color: #9E9EFF;
+    --link-visited-color: #D0ADF0;
+    --link-hover-color: pink;
+    --link-active-color: #FF9E9E;
+}
+
+@media only screen {
+    main {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    main {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    /* defaults to dark theme */
+    body {
+        --text-color: #eee;
+        --bkg-color: #171B22;
+        --dark-toggle-text: 'Light Mode';
+        --link-color: #9E9EFF;
+        --link-visited-color: #D0ADF0;
+        --link-hover-color: pink;
+        --link-active-color: #FF9E9E;
+    }
+    body.light-theme {
+        --text-color: #222;
+        --bkg-color: #fff;
+        --dark-toggle-text: 'Dark Mode';
+        --link-color: blue;
+        --link-visited-color: purple;
+        --link-hover-color: hotpink;
+        --link-active-color: pink;
+    }
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: var(--bkg-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+p {
+    color: var(--text-color);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    float: left;
+}
+
+nav a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 450px) {
+    nav a {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+
+/** Changes the text of the toggle button when pressed, how spooky! */
+
+nav .btn-toggle-theme {
+    content: var(--dark-toggle-text);
+    margin-top: 1em;
+}
+
+nav .btn-toggle-theme:before {
+    content: var(--dark-toggle-text);
+    margin-top: 1em;
+}
+
+a:link {
+    color: var(--link-color);
+}
+
+a:visited {
+    color: var(--link-visited-color);
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+a:active {
+    color: var(--link-active-color);
+}
