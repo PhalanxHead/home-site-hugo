@@ -9,5 +9,8 @@ enableRobotsTXT = true
 paginate = 10
 summaryLength = 0
 
+[taxonomies]
+   series = "series"
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
