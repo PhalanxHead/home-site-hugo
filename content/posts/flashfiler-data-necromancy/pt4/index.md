@@ -1,21 +1,26 @@
 ---
 title: "Part 4: How I Learned to Love the Database (and actually get some CSVs)"
 date: 2022-07-10T15:00:00+10:00
+lastmod: 2022-07-12T12:00:00+10:00
 summary: "Here, I present a solution: How to turn FlashFiler files into readable CSVs using NexusDB"
-tags: ['FlashFiler', 'Delphi', 'NexusDB', 'FarmOS']
+tags: ['FlashFiler', 'FF2', 'Delphi', 'NexusDB', 'FarmOS']
 series: ['FlashFiler Data Necromancy']
 ---
 
 ## What even is a NexusDB?
 
-So I've mentioned this site a few times, now, but you'll have to forgive me for not really being keen to try out too many links.
+So in this blog series, I've mentioned this site a few times.
+But you'll have to forgive me for not really being keen to try out too many links.
+It's so hard to parse which ones are actually dead :joy:.
 
 <figure>
     <img src="NexusDbSite.png" alt="A screenshot of the NexusDB Website - It looks straight out of 2005">
     <figcaption>Their homepage looks like it hasn't been updated since 2004</figcaption>
 </figure>
 
-I was totally convinced that trying their software would be a dead end. Actually I thought the site still being actively hosted was an accident - someone at a company that bought them out must have some ancient server running that also happens to be hosting this site! Right? Especially since I can't sign up for the forums! It's all an accident surely!
+I was totally convinced that trying their software would be a dead end. 
+Actually I thought the site still being actively hosted was an accident - someone at a company that bought them out must have some ancient server running that also happens to be hosting this site! 
+Right? Especially since I can't sign up for the forums! It's all an accident surely!
 
 And given the site can't send me emails, surely the "Free Trial" software won't be able to either.
 
@@ -26,7 +31,9 @@ Not so! In fact, it took me half a dozen visits to notice this little window:
     <figcaption>Updates? In 2022? Including a Changelog? Paint me Pink!</figcaption>
 </figure>
 
-Actually, a page with [Contacts](https://nexusdb.com/support/index.php?q=node/555) might be handy, this is still blowing my mind a little.
+Actually, a page with [Contacts](https://nexusdb.com/support/index.php?q=node/555) might be handy. 
+This is still blowing my mind a little.
+
 Wait the company is based in Queensland? Now I'm truly shocked!
 
 
@@ -35,20 +42,29 @@ Wait the company is based in Queensland? Now I'm truly shocked!
     <figcaption>Having a Contact site with real people's names? This seems truly foreign now</figcaption>
 </figure>
 
-What truly got me here was the telegram chat. I don't even have telegram, but if it helps, why not!
+What got me intrigued here was the telegram chat. I don't even have telegram, but if it helps, why not!
 
-I joined, and asked about being able to join the newsgroup to actually download the file, but no-one really seemed able to keen to upload the file or fix the email client bug. They pointed me in the direction of the Open Sourced FlashFiler binaries I had already tried.
+I joined, and asked about being able to join the newsgroup to actually download the file, but no-one really seemed able to keen to upload the file to telegram, or fix the email client bug. 
+They pointed me in the direction of the Open Sourced FlashFiler binaries I had already tried.
 In fairness to them, no-one claimed they'd support FlashFiler, and they were very nice so I couldn't really be annoyed.
 
-## Stop putting off the inevitable - Download NexusDB
+## Stop putting off the Inevitable - Download NexusDB Today!
 
-However, this gave me the idea to just... try NexusDB. I've seen a few mentions around to use some "nxImporter" program to make it all go. I didn't think I could find it but what's the harm? I have nothing left to lose.
+However, this gave me the idea to just... try NexusDB. 
+I've seen a few mentions around to use some "nxImporter" program to make it all go. 
+I didn't think I could find it (it's not in their 'bonus downloads' page) but what's the harm? I have nothing left to lose.
 
-Assuming that the "Trial Version" of NexusDB 4 would just not let me past the licensing window (has anything up to this point led me to believe licenses would work properly after 20 years?), I tried out one of the [daily builds](https://www.nexusdb.com/downloads/dailybuilds/) that I assumed might be okay. From memory, it was for NexusDB 3, and I really didn't have much luck. I eventually got it to run, but I also had to set up a custom user with the privilege to log in as a service or something like that. Initially I also tried to make it directly alias the FF2 files, which was silly. Obviously it didn't work.
+Assuming that the "Trial Version" of NexusDB 4 would just not let me past the licensing window (has anything up to this point led me to believe licenses would work properly after 20 years?), I tried out one of the [daily builds](https://www.nexusdb.com/downloads/dailybuilds/) that I assumed might be okay. 
+From memory, it was for NexusDB 3, and I really didn't have much luck. 
+I eventually got it to run, but I also had to set up a custom user with the privilege to log in as a service or something like that. 
+Initially I also tried to make it directly alias the FF2 files, which was silly. 
+Obviously it didn't work, but any references to it unfairly assumed knowledge IMO.
 
 ## Why not try the version that's actually in support, dingbat?
 
-I eventually plucked up the courage to give it one more go, and downloaded the trial of [NexusDB V4](https://nexusdb.com/support/index.php?q=node/550). It definitely asks me for an email address, and actually does send me an email, which I discover in my junk folder a little while after, but no matter.
+I eventually plucked up the courage to give it one more go, after licking the wounds of failure for another few days, and downloaded the trial of [NexusDB V4](https://nexusdb.com/support/index.php?q=node/550). 
+It definitely asks me for an email address, and actually does send me an email, which I discover in my junk folder a little while after, but no matter.
+It's a surprise to be sure, but a welcome one!
 
 I root around in the provided files, hoping to find this mysterious `NxImporter` program, but no luck. Let's just install it anyway, and see what happens.
 
@@ -65,11 +81,16 @@ Okay I got this far with the daily build, but let's go and make ourself an alias
     <figcaption>You have to add the alias and *then* click Save Changes, obviously</figcaption>
 </figure>
 
-## Importing highly legal goods
+## Importing highly legal goods and data
 
 Okay now just to find this freaking importer program.
-Even going back now, it's not easy to find. Fortunately for me, [I found it on this page](https://www.nexusdb.com/support/index.php?q=node/26890). 
-Let's cross our toes and hope for the best.
+Even going back now, it's not easy to find. 
+Fortunately for me, [I found it on this page](https://www.nexusdb.com/support/index.php?q=node/26890). 
+Let's cross our toes and hope for the best!
+
+{{< alert >}}
+If, in the future from now, the above link is broken, feel free to email me, I've kept copies of everything here.
+{{< /alert >}}
 
 Hey Hey Hey, it works!
 
@@ -149,10 +170,13 @@ They definitely have data in them, but opening them as UTF-8 is even more unread
 
 Now just to turn all this into some kind of plaintext.
 
-There's a few driver options around, but I already have a sample ODBC reader app written, so let's use the free trial of the [ODBC Driver](https://www.nexusdb.com/support/index.php?q=odbctrial). Nexus say you can download it from [DevArt](https://www.devart.com/odbc/nexusdb/), and it's a free trial for 30 days.
+There's a few driver options listed in the admin portal, but I already have a sample ODBC reader app written, so let's use the free trial of the [ODBC Driver](https://www.nexusdb.com/support/index.php?q=odbctrial). 
+NexusDB say you can download it from [DevArt](https://www.devart.com/odbc/nexusdb/), and it's a free trial for 30 days.
 Oh good, another signing up.
 
-Pro tip, they also send a lot of sales emails to your input address. Do with this what you will.
+{{< alert "skull-crossbones" >}}
+Pro tip, they also send a lot of sales emails to the email address you put in here. One of them will be an access code, but the rest are assuming you're a Delphi Dev with money. Do with this what you will.
+{{< /alert >}}
 
 Installing the driver we can see it's 64 bit!! I can easily add it to the system's ODBC portal:
 
@@ -171,7 +195,7 @@ It even works properly in Visual Studio!
 </figure>
 
 
-Running my script from earlier, I get all the records I expect back into my JSON file, so I modify it a little to just... grab all the tables. No thinking needed :D
+Running my script from earlier, I get all the records I expect back into my JSON file, so I modify it a little to just... grab all the tables. No thinking needed :smile:
 
 ```cs
 using Newtonsoft.Json;
@@ -296,17 +320,24 @@ Now we just get to clean and link it! But that can be a job for another day.
 
 ## So what did we learn?
 
-This whole experience was a real slow and painful grind towards success. Somehow I feel like every step with this kind of necromancy is an uphill battle, but if I did it all by hand, I'd still be going.
+This whole experience was a real slow and painful grind towards success. 
+Somehow I feel like every step with this kind of necromancy is an uphill battle, but if I did it all by hand, I'd still be going.
 
 I think the main lessons can be seen as such:
 
-1. Unless you control the entire lifecycle of your product (ie, the product dies when you kill its related WebAPIs), your product could easily outlive your company by decades.
+1. Unless you control the entire lifecycle of your product (ie, the product dies when you kill its related WebAPIs), your product could easily outlive your company by decades. _Especially_ if your software is copied onto client's devices.
 2. Source Code is meaningless without good directions to build it, including on exactly how to find dependencies.
-3. Publicly Accessible Forum Posts (ie that Google can index) are absolutely vital to this kind of application necromancy. It's a public service, even if you just dump your forum posts and email chains into an indexer when you're done.
-   1. Discord, Slack and Telegram are not the same as a community forum.
+3. Publicly Accessible Forum Posts (ie that Google can index) are absolutely vital to this kind of application necromancy. IMO, it's a public service to make things indexable, even if you just dump your forum posts and email chains into an indexer when you finish providing support.
+   {{< alert >}}
+   Discord, Slack and Telegram are not the same as a community forum, even if you are active there now and very nice and moderate everything.
+   {{< /alert >}}
+   - As a younger developer, and especially a woman, I will try not to bother someone directly if I can just google the problem first.
+   - I don't really want to add yet another slack channel to my list of places to be, just to figure out why I'm having some issue.
+   - Making support public is good actually, both for now and in 20 years time.
 4. Unfamiliar waters aren't a hard blocker for doing what you need, but you will need some luck to get there.
 5. Is it a dead site? Or does it just have a classic look?
 6. I'm glad I'm not writing software in the 90s, I really like my modern toolchains!
 
 One day, I'm sure I'll look back at how we do knowledge sharing now in the same way I look at poorly formatted email chain dumps from 2000, but for now, I'm just glad they're around.
-You never know who you will be helping by asking questions :D
+
+You never know who you will be helping by asking questions :smile:
