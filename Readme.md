@@ -36,3 +36,11 @@ hugo --minify
 to build the website. It'll output a full website for you in the `./public` folder.
 
 Copy the entire contents of the `./public` folder to the root folder in your web server.
+
+## Updating the Theme
+
+Run 
+
+```ps
+hugo mod get -u
+```
