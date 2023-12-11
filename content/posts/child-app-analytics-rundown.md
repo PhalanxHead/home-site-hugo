@@ -53,7 +53,7 @@ My findings ended in 2 major contenders:
 
 ### Countly Analytics
 
-[https://countly.com/]
+https://countly.com/
 
 Countly was the first product that really advertised themselves to me as a place vying for the Children's market, via [this blog post](https://countly.com/blog/data-privacy-for-kids-apps-what-parents-and-developers-need-to-know). That and a few Apple Developer Forum threads recommended them
 
@@ -68,7 +68,7 @@ One other cool thing Countly seems to market themselves with is that they can do
 
 ### Matomo Analytics
 
-[https://matomo.org/]
+https://matomo.org/
 
 Matomo was recommended to me by a colleague who had done some research on analytics tools some years prior.
 
