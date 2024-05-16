@@ -2,12 +2,12 @@
 title: "Introduction to Jest"
 date: 2022-04-25T17:00:00+10:00
 summary: 'An introduction to writing unit tests in Typescript with Jest. This tutorial is written as a Rust mdbook. [[Download PDF](/jest-book/pdf/output.pdf)]'
-url: '/jest-book'
+url: '/jest-book/index.html'
 ---
 
 An introduction to writing unit tests in Typescript with Jest.
 
 This tutorial is written as a Rust mdbook.
 
-[Start Tutorial](/jest-book)
+[Start Tutorial](/jest-book/index.html)
 [[Download Pdf](/jest-book/pdf/output.pdf)]
