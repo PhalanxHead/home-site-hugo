@@ -17,7 +17,7 @@
         class="decoration-primary-500 hover:underline hover:underline-offset-2 text-neutral-800 dark:text-neutral"
         href="{{ .RelPermalink }}"
         > {{ if .Params.series }}<em>{{ index .Params.series 0 }}</em> <br /> {{end}}
-        {{ .Title | emojify }}</a
+      {{ if ne (index .Params.series 0) .Title}} {{ .Title | emojify }} {{end}}</a
       >
     {{ end }}
     {{ if and .Draft .Site.Params.article.showDraftLabel }}

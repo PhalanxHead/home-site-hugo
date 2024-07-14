@@ -1,10 +1,32 @@
 ---
 title: "Ten Thousand Lesbians"
 date: 2022-02-10T17:41:32+10:00
-summary: 'Ten Thousand Lesbians is an art piece written in Cocos Creator. It also details a short history of the Lesbian Flag and its development. [Link to Project](/tenthousandlesbians)'
+summary: 'Ten Thousand Lesbians is an art piece written in Cocos Creator. It also details a short history of the Lesbian Flag and its development.'
 ---
 
-[Link to Project](/tenthousandlesbians)
+
+<div id="GameDiv" style="width: 800px; height: 600px;">
+    <div id="Cocos3dGameContainer">
+        <canvas id="GameCanvas" width="800" height="600"></canvas>
+    </div>
+</div>
+<div style="height: 150px;"></div>
+<!-- Polyfills bundle. -->
+<script src="src/polyfills.bundle.js" charset="utf-8">
+</script>
+
+<!-- SystemJS support. -->
+<script src="src/system.bundle.js" charset="utf-8">
+</script>
+
+<!-- Import map -->
+<script src="src/import-map.json" type="systemjs-importmap" charset="utf-8"> </script>
+
+<script>
+    System.import('./index.js').catch(function(err) {
+        console.error(err);
+    })
+</script>
 
 ## About This Project
 
@@ -26,7 +48,7 @@ The main source for the following article is from the youtube video [History Of 
 ### The _Labrys Flag_
 
 <figure>
-    <img src="Labrys_Lesbian_Flag.svg" alt="The Labrys Flag - A lavender flag with a black inverted triangle in the centre. The flag contains a white labrys, double headed ax commonly found in Minoan Cretan iconography." width="400">
+    <img src="flags/Labrys_Lesbian_Flag.svg" alt="The Labrys Flag - A lavender flag with a black inverted triangle in the centre. The flag contains a white labrys, double headed ax commonly found in Minoan Cretan iconography." width="400">
     <figcaption>Labrys Flag. Source: <a href="https://en.wikipedia.org/wiki/Lesbian_flags#/media/File:Labrys_Lesbian_Flag.svg">Wikipedia Commons</a></figcaption>
 </figure>
 
@@ -47,7 +69,7 @@ Unfortunately, the labrys flag has been associated with Trans Exclusionary Radic
 ### The _Lipstick Lesbian Flag_
 
 <figure>
-    <img src="Lipstick_lesbian_Pride_Flag.svg" alt="The lipstick lesbian flag. A 7-horizontal stipe flag with various shades of pink as the stripes. It also has a large pink kiss-mark in the top-left corner" width="400">
+    <img src="flags/Lipstick_lesbian_Pride_Flag.svg" alt="The lipstick lesbian flag. A 7-horizontal stipe flag with various shades of pink as the stripes. It also has a large pink kiss-mark in the top-left corner" width="400">
     <figcaption>The Lipstick Lesbian Flag. Source: <a href="https://en.wikipedia.org/wiki/Lesbian_flags#/media/File:Lipstick_lesbian_Pride_Flag.svg">Wikipedia Commons</a></figcaption>
 </figure>
 
@@ -66,7 +88,7 @@ This flag never took any real hold, being that it's for a sub-community that did
 ### The _Pink Flag_
 
 <figure>
-    <img src="Lesbian_Pride_pink_flag.svg" alt="The pink lesbian flag. A 7-horizontal stipe flag with various shades of pink as the stripes." width="400">
+    <img src="flags/Lesbian_Pride_pink_flag.svg" alt="The pink lesbian flag. A 7-horizontal stipe flag with various shades of pink as the stripes." width="400">
     <figcaption>The Pink Lesbian Flag. Source: <a href="https://en.wikipedia.org/wiki/Lesbian_flags#/media/File:Lesbian_Pride_pink_flag.svg">Wikipedia Commons</a></figcaption>
 </figure>
 
@@ -82,10 +104,10 @@ Originally when I heard about this flag, I was told it was "the bad lesbian flag
 <figure> 
 <div class="row" style="display: table;">
   <div class="column" style="float:left;width:46%;padding:5px;">
-    <img src="Lesbian_pride_flag_2018.svg" alt="The Orange and Pink flag (7-stripes). A 7-horizontal stripe flag using various shades of pink and orange, with a white stripe in the centre" width="300">
+    <img src="flags/Lesbian_pride_flag_2018.svg" alt="The Orange and Pink flag (7-stripes). A 7-horizontal stripe flag using various shades of pink and orange, with a white stripe in the centre" width="300">
   </div>
   <div class="column" style="float:left;width:54%;padding:5px;">
-    <img src="Lesbian_Pride_Flag_2019.svg" alt="The Orange and Pink flag (5-stripes). A 5-horizontal stripe flag using various shades of pink and orange, with a white stripe in the centre" width="400">
+    <img src="flags/Lesbian_Pride_Flag_2019.svg" alt="The Orange and Pink flag (5-stripes). A 5-horizontal stripe flag using various shades of pink and orange, with a white stripe in the centre" width="400">
   </div>
 </div>
 <figcaption>The Orange and Pink Lesbian Flag, both 7 and 5 stripe versions. Source: <a href="https://en.wikipedia.org/wiki/Lesbian_flags#/media/File:Lesbian_Pride_Flag_2019.svg">Wikipedia Commons</a></figcaption>

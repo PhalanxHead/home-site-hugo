@@ -1,9 +1,25 @@
 ---
 title: "Child App Analytics - Matomo vs Countly"
 date: 2023-12-11T13:09:24+11:00
+lastmod: 2024-07-14T18:00:00+11:00
 summary: "Adding Analytics to my Blogsite"
 tags: ['Countly', 'Matomo', 'Analytics', 'Privacy', 'Child Apps', 'Children']
 ---
+
+## July 2024 Update - Removing Countly
+
+Hiya - a quick update about 6 months on - I've removed the Countly integration from the site.
+
+I'm not fully sure I ever set it up correctly, I was getting some CORS/CSP errors later on so I'm not sure 
+I ever fully evaluated it properly.
+This probably would have been fine if not for the below noted issue with using Countly on a Celeron Processor,
+since I never would have needed to use different origins anyway but oh well.
+
+The Matomo Analytics will stay (it's handy to see if people are looking at the site sometimes!).
+
+Anyway, back to the original post:
+
+## Child App Analytics - Matomo vs Countly
 
 Recently at work, we started looking into adding Analytics to the family entertainment products we create for clients.
 
