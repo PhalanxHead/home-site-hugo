@@ -37,10 +37,20 @@ to build the website. It'll output a full website for you in the `./public` fold
 
 Copy the entire contents of the `./public` folder to the root folder in your web server.
 
+## Update the CSS
+
+You can recompile the Tailwind CSS from the root directory by running:
+
+```ps
+npm run build
+```
+
+You will want to do this before committing any changes to github.
+
 ## Updating the Theme
 
 Run 
 
 ```ps
-hugo mod get -u
+git submodule update --remote --merge
 ```

@@ -13,10 +13,10 @@ So in this blog series, I've mentioned this site a few times.
 But you'll have to forgive me for not really being keen to try out too many links.
 It's so hard to parse which ones are actually dead :joy:.
 
-{{<figure
-   src="NexusDbSite.png" 
-   alt="A screenshot of the NexusDB Website - It looks straight out of 2005"
-   caption="Their homepage looks like it hasn't been updated since 2004"
+{{< figure
+    src="NexusDbSite.png" 
+    alt="A screenshot of the NexusDB Website - It looks straight out of 2005"
+    caption="Their homepage looks like it hasn't been updated since 2004"
 >}}
 
 I was totally convinced that trying their software would be a dead end. 
