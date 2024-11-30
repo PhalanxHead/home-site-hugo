@@ -39,10 +39,11 @@ Welp, my vague hope for a SQLite extract seems to have gone out the window, but 
 
 Experience tells me that these are probably database table extracts, but opening one up in a text editor shows that it's not exactly plaintext.
 
-<figure>
-    <img src="FFAsText.png" alt="Screenshot of an .FF2 file opened as UTF-8. It has a lot of red 'couldn't load symbol' placeholders">
-    <figcaption>Opening an .FF2 as UTF-8 doesn't seem like it'll help much</figcaption>
-</figure>
+{{< figure
+    src="FFAsText.png"
+    alt="Screenshot of an .FF2 file opened as UTF-8. It has a lot of red 'couldn't load symbol' placeholders"
+    caption="Opening an .FF2 as UTF-8 doesn't seem like it'll help much"
+>}}
 
 There seems to be text data down lower, but I don't feel confident trying to get anything meaningful out of these directly.
 
@@ -50,42 +51,46 @@ Maybe some google-fu will tell us some more about the file format.
 [FileExt.com](https://filext.com/file-extension/FF2) seems to think it's a file associated with FlashFiler, although I'm not very convinced at their claim to be able to decode it in a browser.
 Sounds like the FlashFiler company, [Turbopower](http://www.turbopower.com/), has gone out of business and their site no longer works. Bugger.
 
-<figure>
-    <img src="TurboPowerCorpse.png" alt="Screenshot of the TurboPower closing website.">
-    <figcaption>Who's even paying to host this domain? Santa Claus?</figcaption>
-</figure>
+{{< figure
+    src="TurboPowerCorpse.png" 
+    alt="Screenshot of the TurboPower closing website."
+    caption="Who's even paying to host this domain? Santa Claus?"
+>}}
 
 Googling the product, the first link is to a [SourceForge repo](https://sourceforge.net/projects/tpflashfiler/), which has this lovely little tag line:
 
 {{< lead >}}
-"FlashFiler is a client-server database for Borland Delphi & C++Builder.
-It features a component-based architecture & the server engine can be embedded in your applications. FlashFiler is easy to configure, performs well, & includes SQL support."
+> FlashFiler is a client-server database for Borland Delphi & C++Builder.
+> It features a component-based architecture & the server engine can be embedded in your applications. FlashFiler is easy to configure, performs well, & includes SQL support.
 {{< /lead >}}
 
 Hmm unfortunately, I know bugger all about Delphi. They provide `.exe` files in the repo though, that's pretty neat!
 
-<figure>
-    <img src="FlashFilerBinFiles.png" alt="Screenshot of the bin files you can download from the repo">
-    <figcaption>The icons look like something out of MS DOS, but hey, it's worth a start!</figcaption>
-</figure>
+{{< figure
+    src="FlashFilerBinFiles.png" 
+    alt="Screenshot of the bin files you can download from the repo"
+    caption="The icons look like something out of MS DOS, but hey, it's worth a start!"
+>}}
 
 I don't really know what anything here does, and all the internal docs here are the long dead `.hlp` extension. 
 I clicked around a bit, but I ended up needing to download the PDF documents in the SourceForge repo to get anywhere.
 The gist is, you open the `ffserver.exe` file, create an "alias" that points to the folder containing your `.FF2` files, and then connect to that server with the `ffe.exe` program.
 
-<figure>
-    <img src="FFServerWorks.png" alt="Screenshot of the FF Server and FF Explorer displaying the list of tables">
-    <figcaption>Holy shit it actually freaking works?</figcaption>
-</figure>
+{{< figure
+    src="FFServerWorks.png" 
+    alt="Screenshot of the FF Server and FF Explorer displaying the list of tables"
+    caption="Holy shit it actually freaking works?"
+>}}
 
 Okay I am pleasantly surprised that this software still works on Windows 11. 
 Maybe the whole backwards compatibility thing is good after all :joy:.
 I can even query the DB using regular old SQL and get some rows back! At this point I thought I had the whole project in the bag.
 
-<figure>
-    <img src="SqlQueryDataReturn.png" alt="Screenshot of a SQL query returning data in the table we looked at as plain text earlier">
-    <figcaption>Some of the dates are a bit funny, but hey, I can read the data now!</figcaption>
-</figure>
+{{< figure
+    src="SqlQueryDataReturn.png" 
+    alt="Screenshot of a SQL query returning data in the table we looked at as plain text earlier"
+    caption="Some of the dates are a bit funny, but hey, I can read the data now!"
+>}}
 
 I put the tools down for a weekend or two.
 
@@ -108,10 +113,11 @@ Visual Studio 2019 seems happy enough to connect to it though?
 The data source explorer bugs out a bit, but it seems happy enough to connect and query the DB, so I rest easy, thinking I am close to home.
 
 
-<figure>
-    <img src="FFinVs.png" alt="Screenshot of a portion of Visual Studio showing a successful query of one of thr FF Tables via ODBC">
-    <figcaption>We can see at least some data out of the ODBC Driver, even if it's not showing column names.</figcaption>
-</figure>
+{{< figure
+    src="FFinVs.png" 
+    alt="Screenshot of a portion of Visual Studio showing a successful query of one of thr FF Tables via ODBC"
+    caption="We can see at least some data out of the ODBC Driver, even if it's not showing column names."
+>}}
 
 Visual Studio is crashing a little while I'm doing this, but I don't clock it as weird at the time. 
 I put the tools down for another weekend.

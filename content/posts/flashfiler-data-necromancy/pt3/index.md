@@ -101,10 +101,11 @@ This is a choice I now am slightly annoyed about, mostly because: wow they spam 
 
 I've since uninstalled RAD Studio, and I really can't be bothered downloading it again for a screengrab, but it gives me major Visual Studio 2011 vibes.
 
-<figure>
-    <img src="RadStudio.png" alt="RAD Studio website screengrab">
-    <figcaption>RAD Studio? More like I don't want to learn to navigate this today</figcaption>
-</figure>
+{{< figure 
+    src="RadStudio.png" 
+    alt="RAD Studio website screengrab"
+    caption="RAD Studio? More like I don't want to learn to navigate this today"
+>}}
 
 The idea of having a Native UI Builder tool -- in the vein of Visual Basic .NET -- in 2022 intrigues me, but I don't have time for this today, and I don't think there's any demand in my job for it right now. 
 I assume the main consumer base for Delphi now is big corpos who have decades of legacy tooling in Delphi, and are afraid of doing change-management to a web-based system.

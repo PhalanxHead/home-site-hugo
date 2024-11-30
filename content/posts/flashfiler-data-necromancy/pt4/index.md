@@ -13,10 +13,11 @@ So in this blog series, I've mentioned this site a few times.
 But you'll have to forgive me for not really being keen to try out too many links.
 It's so hard to parse which ones are actually dead :joy:.
 
-<figure>
-    <img src="NexusDbSite.png" alt="A screenshot of the NexusDB Website - It looks straight out of 2005">
-    <figcaption>Their homepage looks like it hasn't been updated since 2004</figcaption>
-</figure>
+{{<figure
+   src="NexusDbSite.png" 
+   alt="A screenshot of the NexusDB Website - It looks straight out of 2005"
+   caption="Their homepage looks like it hasn't been updated since 2004"
+>}}
 
 I was totally convinced that trying their software would be a dead end. 
 Actually I thought the site still being actively hosted was an accident - someone at a company that bought them out must have some ancient server running that also happens to be hosting this site! 
@@ -26,10 +27,11 @@ And given the site can't send me emails, surely the "Free Trial" software won't 
 
 Not so! In fact, it took me half a dozen visits to notice this little window:
 
-<figure>
-    <img src="RecentSiteUpdates.png" alt="A screenshot of a tiny part of the site showing recent updates. Some of the updates are in 2022!">
-    <figcaption>Updates? In 2022? Including a Changelog? Paint me Pink!</figcaption>
-</figure>
+{{<figure
+   src="RecentSiteUpdates.png" 
+   alt="A screenshot of a tiny part of the site showing recent updates. Some of the updates are in 2022!"
+   caption="Updates? In 2022? Including a Changelog? Paint me Pink!"
+>}}
 
 Actually, a page with [Contacts](https://nexusdb.com/support/index.php?q=node/555) might be handy. 
 This is still blowing my mind a little.
@@ -37,10 +39,11 @@ This is still blowing my mind a little.
 Wait the company is based in Queensland? Now I'm truly shocked!
 
 
-<figure>
-    <img src="NexusDbContacts.png" alt="A list of contact details for the NexusDB Product">
-    <figcaption>Having a Contact site with real people's names? This seems truly foreign now</figcaption>
-</figure>
+{{<figure
+    src="NexusDbContacts.png"
+    alt="A list of contact details for the NexusDB Product"
+    caption="Having a Contact site with real people's names? This seems truly foreign now"
+>}}
 
 What got me intrigued here was the telegram chat. I don't even have telegram, but if it helps, why not!
 
@@ -69,17 +72,19 @@ It's a surprise to be sure, but a welcome one!
 I root around in the provided files, hoping to find this mysterious `NxImporter` program, but no luck. Let's just install it anyway, and see what happens.
 
 
-<figure>
-    <img src="NexusDbAdminPortal.png" alt="NexusDB Admin Portal Screenshot">
-    <figcaption>The admin portal works. Hey's it's Professional... And 64-bit!</figcaption>
-</figure>
+{{< figure
+    src="NexusDbAdminPortal.png" 
+    alt="NexusDB Admin Portal Screenshot"
+    caption="The admin portal works. Hey's it's Professional... And 64-bit!"
+>}}
 
 Okay I got this far with the daily build, but let's go and make ourself an alias anyway.
 
-<figure>
-    <img src="NexusDbAddingAlias.png" alt="NexusDb Portal Adding an Alias Screenshot">
-    <figcaption>You have to add the alias and *then* click Save Changes, obviously</figcaption>
-</figure>
+{{< figure
+    src="NexusDbAddingAlias.png" 
+    alt="NexusDb Portal Adding an Alias Screenshot"
+    caption="You have to add the alias and *then* click Save Changes, obviously"
+>}}
 
 ## Importing highly legal goods and data
 
@@ -94,51 +99,58 @@ If, in the future from now, the above link is broken, feel free to email me, I'v
 
 Hey Hey Hey, it works!
 
-<figure>
-    <img src="NxImporterDbSelectors.png" alt="Screenshot of the available database conversions">
-    <figcaption>Actually this thing supports a lot of different DBs!</figcaption>
-</figure>
+{{< figure
+    src="NxImporterDbSelectors.png" 
+    alt="Screenshot of the available database conversions"
+    caption="Actually this thing supports a lot of different DBs!"
+>}}
 
 
 Next we select the Importer login mode - we'll chose "Single User" mode because we have the FF Server running, and I trust it to some extent.
 
-<figure>
-    <img src="NxImporterUserMode.png" alt="Screenshot of the available user modes for the NxImporter">
-    <figcaption>Let's use the running server</figcaption>
-</figure>
+{{< figure
+    src="NxImporterUserMode.png" 
+    alt="Screenshot of the available user modes for the NxImporter"
+    caption="Let's use the running server"
+>}}
 
 Select the database that's listed under the `Databases` tab, and then tab over to the `Tables` tab and select all.
 
-<figure>
-    <img src="NxImporterSourceTables.png" alt="Screenshot of the available tables shown in NxImporter">
-    <figcaption>Select all the tables!</figcaption>
-</figure>
+{{< figure
+    src="NxImporterSourceTables.png" 
+    alt="Screenshot of the available tables shown in NxImporter"
+    caption="Select all the tables!"
+>}}
 
 Now we need to select a target DB Instance. Tab over to `Copy (To)`, and select one of the running NexusDB Instances. I'm gonna go for the one with my laptop's name but I have no reason to believe the others won't work.
 
-<figure>
-    <img src="NxImporterDestinations.png" alt="Screenshot of the NxImporter's found target databases.">
-    <figcaption>Select a Database Instance to copy into!</figcaption>
-</figure>
+{{< figure
+    src="NxImporterDestinations.png"
+    alt="Screenshot of the NxImporter's found target databases."
+    caption="Select a Database Instance to copy into!"
+>}}
 
 Now we simply select the Target DB Alias we made before back in the admin portal, and then tab over to the `Tables` tab to make sure we can see all the table names we expect.
 
-<figure>
-    <img src="NxImporterDestinationAliases.png" alt="Screenshot of the NxImporter's alias list for the target DB">
-    <figcaption>Select the target DB Alias we made before</figcaption>
-</figure>
+{{< figure
+    src="NxImporterDestinationAliases.png" 
+    alt="Screenshot of the NxImporter's alias list for the target DB"
+    caption="Select the target DB Alias we made before"
+>}}
 
-<figure>
-    <img src="NxImporterFinalScreen.png" alt="Screenshot showing the table names from the source DB">
-    <figcaption>Make sure we can see the tables we expect, then hit Import!</figcaption>
-</figure>
+{{< figure
+    src="NxImporterFinalScreen.png" 
+    alt="Screenshot showing the table names from the source DB"
+    caption="Make sure we can see the tables we expect, then hit Import!"
+>}}
 
 Hit Import, and wait for it all to go!
 
-<figure>
-    <img src="NxImporterCompleteScreen.png" alt="Screenshot showing the successful importing of all the tables">
-    <figcaption>All tables imported</figcaption>
-</figure>
+{{< figure
+    src="NxImporterCompleteScreen.png" 
+    alt="Screenshot showing the successful importing of all the tables"
+    caption="All tables imported"
+>}}
 
 We can see I have one failed row, from memory it had some odd date issue that I don't really care about.
 
@@ -180,19 +192,21 @@ Pro tip, they also send a lot of sales emails to the email address you put in he
 
 Installing the driver we can see it's 64 bit!! I can easily add it to the system's ODBC portal:
 
-<figure>
-    <img src="OdbcDrivers.png" alt="Screenshot of the systems' ODBC Drivers admin panel">
-    <figcaption>It's there!</figcaption>
-</figure>
+{{< figure
+    src="OdbcDrivers.png" 
+    alt="Screenshot of the systems' ODBC Drivers admin panel"
+    caption="It's there!"
+>}}
 
 I ended up using the IP-based connection, pointing at `localhost` on port 16000.
 
 It even works properly in Visual Studio!
 
-<figure>
-    <img src="VisualStudioOdbc.png" alt="Screenshot of the Server Explorer in Visual Studio, showing all the tables in the DB">
-    <figcaption>The tables all display! And they will even tell you what's in them if you ask nicely</figcaption>
-</figure>
+{{< figure
+    src="VisualStudioOdbc.png" 
+    alt="Screenshot of the Server Explorer in Visual Studio, showing all the tables in the DB"
+    caption="The tables all display! And they will even tell you what's in them if you ask nicely"
+>}}
 
 
 Running my script from earlier, I get all the records I expect back into my JSON file, so I modify it a little to just... grab all the tables. No thinking needed :smile:

@@ -11,6 +11,8 @@ autoSwitchAppearance = true
 
 enableSearch = true
 enableCodeCopy = true
+enableImageLazyLoading = true
+enableImageWebp = true
 
 mainSections = ["posts", "tutorials", "projects"]
 # robots = ""
