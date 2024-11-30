@@ -46,7 +46,7 @@ mainSections = ["posts", "tutorials", "projects"]
   showTableOfContents = true
   showTaxonomies = false
   showWordCount = false
-  showComments = false
+  showComments = true
   sharingLinks = ["twitter", "pinterest", "reddit", "linkedin", "email"]
 
 [list]
@@ -60,10 +60,6 @@ mainSections = ["posts", "tutorials", "projects"]
 
 [taxonomy]
   showTermCount = true
-
-[fathomAnalytics]
-  # site = "ABC12345"
-  # domain = "llama.yoursite.com"
 
 [verification]
   # google = ""
