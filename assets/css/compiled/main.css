@@ -3170,6 +3170,11 @@ code {
     padding-right: 8rem;
   }
 
+  .lg\:px-48 {
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
+
   .lg\:ps-8 {
     padding-inline-start: 2rem;
   }
@@ -3183,6 +3188,16 @@ code {
   .xl\:max-w-4xl {
     max-width: 56rem;
   }
+
+  .xl\:px-48 {
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
+
+  .xl\:px-64 {
+    padding-left: 16rem;
+    padding-right: 16rem;
+  }
 }
 
 @media (min-width: 1536px) {
@@ -3190,13 +3205,23 @@ code {
     max-width: 64rem;
   }
 
-  .\32xl\:max-w-full {
-    max-width: 100%;
+  .\32xl\:max-w-screen-2xl {
+    max-width: 1536px;
   }
 
   .\32xl\:px-32 {
     padding-left: 8rem;
     padding-right: 8rem;
+  }
+
+  .\32xl\:px-72 {
+    padding-left: 18rem;
+    padding-right: 18rem;
+  }
+
+  .\32xl\:px-96 {
+    padding-left: 24rem;
+    padding-right: 24rem;
   }
 }
 
